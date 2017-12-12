@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:MyBookshelf"
       mc:Ignorable="d" 
-      d:DesignHeight="300" d:DesignWidth="300"
+      d:DesignHeight="350" d:DesignWidth="550"
       Title="Review">
 
     <Grid>
@@ -13,20 +13,43 @@
             <ColumnDefinition Width="4*"/>
             <ColumnDefinition Width="14*"/>
             <ColumnDefinition Width="15*"/>
+            <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="14*"/>
             <ColumnDefinition Width="4*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="2*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="6*"/>
+            <RowDefinition Height="2*"/>
             <RowDefinition Height="15*"/>
             <RowDefinition Height="2*"/>
-            <RowDefinition Height="7*"/>
+            <RowDefinition Height="15*"/>
             <RowDefinition Height="2*"/>
-            <RowDefinition Height="30*"/>
+            <RowDefinition Height="15*"/>
             <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
-        <ListBox Name="list_reviews" Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="3"/>
-        <Button Name="send_review" Content="Send a review" Grid.Column="2" Grid.Row="3"/>
-        <TextBox Name="write_review" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="1"/>
+        <ListBox x:Name="list_reviews" Grid.Column="1" Grid.Row="7" Grid.ColumnSpan="2" Grid.RowSpan="3">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock FontSize="16" FontWeight="Bold" Text="{Binding Name}"/>
+                        <TextBlock FontSize="12" Text="("/>
+                        <TextBlock FontSize="12" Text="{Binding Data}"/>
+                        <TextBlock FontSize="12" Text=")"/>
+                        <TextBlock FontSize="16" Text="Rating:"/>
+                        <TextBlock FontSize="16" FontWeight="Bold" Text="{Binding Rating}"/>
+                        <TextBlock FontSize="14" Text="{Binding Comment}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Button x:Name="send_review" Content="Send a review" Grid.Column="4" Grid.Row="5"/>
+        <TextBox x:Name="write_review" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="3" Grid.RowSpan="3"/>
+        <Label Content="Name of the book" Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Center"/>
+        <ComboBox Grid.Column="4" Grid.Row="3"/>
+        <Button x:Name="edit_review" Content="Edit review" Grid.Column="4" Grid.Row="7"/>
+        <Button x:Name="delete_review" Content="Delete review" Grid.Column="4" Grid.Row="9"/>
     </Grid>
 </Page>

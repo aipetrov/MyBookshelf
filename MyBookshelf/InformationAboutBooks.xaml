@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:MyBookshelf"
       mc:Ignorable="d" 
-      d:DesignHeight="300" d:DesignWidth="300"
+     d:DesignHeight="350" d:DesignWidth="550"
       Title="InformationAboutBooks">
 
     <Grid>
@@ -19,24 +19,27 @@
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="3*"/>
-            <RowDefinition Height="4*"/>
-            <RowDefinition Height="3*"/>
-            <RowDefinition Height="4*"/>
-            <RowDefinition Height="3*"/>
-            <RowDefinition Height="4*"/>
             <RowDefinition Height="1*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="2*"/>
             <RowDefinition Height="15*"/>
-            <RowDefinition Height="1*"/>
+            <RowDefinition Height="2*"/>
             <RowDefinition Height="5*"/>
-            <RowDefinition Height="3*"/>
+            <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
-        <TextBlock Name="text_author" Grid.Column="3" Grid.Row="1" Text="Author" Grid.ColumnSpan="3"/>
-        <TextBlock Name="text_booktitle" Grid.Column="3" Grid.Row="3" Text="Title" Grid.ColumnSpan="3"/>
-        <TextBlock Name="text_genre" Grid.Column="3" Grid.Row="5" Text="Genre" Grid.ColumnSpan="3"/>
-        <Image Name="book_image" Grid.Column="1" Grid.Row="1" Grid.RowSpan="5"/>
-        <TextBlock Name="book_description" Grid.ColumnSpan="5" Grid.Column="1" Grid.Row="7"/>
-        <Button Name="book_review" Content="Review" Grid.Column="1" Grid.Row="9"/>
-        <Button Name="button_add" Content="Mark as read" Grid.Column="5" Grid.Row="9"/>
+        <TextBlock x:Name="text_author" Grid.Column="3" Grid.Row="1" Text="Author:" Grid.ColumnSpan="3"/>
+        <TextBlock x:Name="text_booktitle" Grid.Column="3" Grid.Row="3" Text="Title:" Grid.ColumnSpan="3"/>
+        <TextBlock x:Name="text_genre" Grid.Column="3" Grid.Row="5" Text="Genre:" Grid.ColumnSpan="3"/>
+        <TextBlock x:Name="text_rating" Grid.Column="3" Grid.Row="7" Text="Rating:" Grid.ColumnSpan="3"/>
+        <Image x:Name="book_image" Grid.Column="1" Grid.Row="1" Grid.RowSpan="7"/>
+        <TextBlock x:Name="book_description" Grid.ColumnSpan="5" Grid.Column="1" Grid.Row="9"/>
+        <Button x:Name="book_review" Content="Review" Grid.Column="1" Grid.Row="11"/>
+        <Button x:Name="button_add" Content="Mark as read" Grid.Column="5" Grid.Row="11"/>
     </Grid>
 </Page>
