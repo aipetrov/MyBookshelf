@@ -10,17 +10,16 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace MyBookshelf
 {
     /// <summary>
-    /// Логика взаимодействия для Authorization.xaml
+    /// Логика взаимодействия для MyBookshelfWindow.xaml
     /// </summary>
-    public partial class Authorization : Page
+    public partial class MyBookshelfWindow : Window
     {
-        public Authorization()
+        public MyBookshelfWindow()
         {
             InitializeComponent();
         }

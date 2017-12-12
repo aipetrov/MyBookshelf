@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace MyBookshelf
 {
     /// <summary>
-    /// Логика взаимодействия для Profile.xaml
+    /// Логика взаимодействия для InformationAboutBooksPage.xaml
     /// </summary>
-    public partial class Profile : Page
+    public partial class InformationAboutBooksPage : Page
     {
-        public Profile()
+        public InformationAboutBooksPage()
         {
             InitializeComponent();
         }

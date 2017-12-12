@@ -1,5 +1,4 @@
-﻿using MyBookshelfData;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,16 +10,17 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace MyBookshelf
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для SignUpPage.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class SignUpPage : Page
     {
-        public MainWindow()
+        public SignUpPage()
         {
             InitializeComponent();
         }

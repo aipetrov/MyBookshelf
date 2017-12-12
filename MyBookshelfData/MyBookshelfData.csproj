@@ -49,6 +49,19 @@
   <ItemGroup>
     <Compile Include="Book.cs" />
     <Compile Include="Context.cs" />
+    <Compile Include="Migrations\201712121508373_InitialCreate.cs" />
+    <Compile Include="Migrations\201712121508373_InitialCreate.Designer.cs">
+      <DependentUpon>201712121508373_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712121513055_start.cs" />
+    <Compile Include="Migrations\201712121513055_start.Designer.cs">
+      <DependentUpon>201712121513055_start.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712121517488_change te opportunity to take null value.cs" />
+    <Compile Include="Migrations\201712121517488_change te opportunity to take null value.Designer.cs">
+      <DependentUpon>201712121517488_change te opportunity to take null value.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository.cs" />
     <Compile Include="Review.cs" />
@@ -57,6 +70,17 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201712121508373_InitialCreate.resx">
+      <DependentUpon>201712121508373_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712121513055_start.resx">
+      <DependentUpon>201712121513055_start.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712121517488_change te opportunity to take null value.resx">
+      <DependentUpon>201712121517488_change te opportunity to take null value.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -17,7 +17,7 @@ namespace MyBookshelfData
             var authorisedUser = from u in users
                                  where (u.Login == login && u.Password == password)
                                  select u;
-            if (authorisedUser == null)
+            if (authorisedUser != null)
             {
                 AuthorisedUser = authorisedUser as User;
                 return true;
