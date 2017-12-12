@@ -7,6 +7,6 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="550">
     <Grid>
-        <Frame Source="AuthorizationPage.xaml" NavigationUIVisibility="Visible"></Frame>
+        <Frame Source="GreetingPage.xaml" NavigationUIVisibility="Visible"></Frame>
     </Grid>
 </Window>

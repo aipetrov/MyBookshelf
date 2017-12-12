@@ -32,7 +32,7 @@ namespace MyBookshelf
 
         private void btn_signin_Click(object sender, RoutedEventArgs e)
         {
-            if (repository.SignedIn(text_login.Text, text_password.Text))
+            if (repository.SignedIn(text_login.Text, password_box.Password))
             {
                 MyBookshelfWindow myBookshelfWindow = new MyBookshelfWindow();
                 myBookshelfWindow.Show();

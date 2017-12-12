@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MyBookshelf"
         mc:Ignorable="d"
-        Title="MyBookshelfWindow" Height="300" Width="300">
+        Title="MyBookshelfWindow" Height="350" Width="550">
     <Grid>
-        
+        <Frame Source="ProfilePage.xaml" NavigationUIVisibility="Hidden">
+        </Frame>
     </Grid>
 </Window>

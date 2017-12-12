@@ -65,6 +65,12 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="EditingProfilePage.xaml.cs">
+      <DependentUpon>EditingProfilePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GreetingPage.xaml.cs">
+      <DependentUpon>GreetingPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MyBookshelfWindow.xaml.cs">
       <DependentUpon>MyBookshelfWindow.xaml</DependentUpon>
     </Compile>
@@ -119,6 +125,14 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="AuthorizationPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditingProfilePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GreetingPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
