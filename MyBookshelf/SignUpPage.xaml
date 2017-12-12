@@ -37,6 +37,6 @@
         <TextBox Name="text_login" Grid.Column="2" Grid.Row="3" Grid.ColumnSpan="2"/>
         <TextBox Name="text_password" Grid.Column="2" Grid.Row="5" Grid.ColumnSpan="2"/>
         <DatePicker Name="text_birth" Grid.Column="2" Grid.Row="7" Grid.ColumnSpan="2"/>
-        <Button Name="btn_signin" Content="Sign Up" Grid.Column="3" Grid.Row="9" />
+        <Button Name="btn_signup" Content="Sign Up" Grid.Column="3" Grid.Row="9" Click="btn_signup_Click"/>
     </Grid>
 </Page>

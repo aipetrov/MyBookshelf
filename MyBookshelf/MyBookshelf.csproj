@@ -71,9 +71,6 @@
     <Compile Include="GreetingPage.xaml.cs">
       <DependentUpon>GreetingPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MyBookshelfWindow.xaml.cs">
-      <DependentUpon>MyBookshelfWindow.xaml</DependentUpon>
-    </Compile>
     <Compile Include="ReviewPage.xaml.cs">
       <DependentUpon>ReviewPage.xaml</DependentUpon>
     </Compile>
@@ -141,10 +138,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MainWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="MyBookshelfWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

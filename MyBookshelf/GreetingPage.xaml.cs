@@ -24,5 +24,15 @@ namespace MyBookshelf
         {
             InitializeComponent();
         }
+
+        private void sign_in_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new AuthorizationPage());
+        }
+
+        private void sign_up_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new SignUpPage());
+        }
     }
 }

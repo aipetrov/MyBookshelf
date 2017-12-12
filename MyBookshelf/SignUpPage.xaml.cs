@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyBookshelfData;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,26 @@ namespace MyBookshelf
     /// </summary>
     public partial class SignUpPage : Page
     {
+        Repository repository = new Repository();
+
         public SignUpPage()
         {
             InitializeComponent();
+        }
+
+        private void btn_signup_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                repository.SignUp(text_login.Text, text_password.Text, text_name.Text, text_birth.SelectedDate.Value);
+                MessageBox.Show("You are successfully registered.", "Success", MessageBoxButton.OK, MessageBoxImage.Asterisk);
+                NavigationService.Navigate(new AuthorizationPage());
+            }
+            catch
+            {
+                MessageBox.Show("Entered data is incorrect.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+
         }
     }
 }
