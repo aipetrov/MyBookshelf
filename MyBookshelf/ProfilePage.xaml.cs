@@ -24,5 +24,10 @@ namespace MyBookshelf
         {
             InitializeComponent();
         }
+
+        private void edit_profile_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new EditingProfilePage());
+        }
     }
 }

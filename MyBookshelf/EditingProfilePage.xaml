@@ -29,9 +29,12 @@
             <RowDefinition Height="5*"/>
             <RowDefinition Height="6*"/>
         </Grid.RowDefinitions>
-        <TextBlock Grid.Column="1" Grid.Row="1" Text="New user name"/>
-        <TextBlock Grid.Column="1" Grid.Row="3" Text="New password"/>
-        <TextBlock Grid.Column="1" Grid.Row="5" Text="New date of birth"/>
+        <TextBlock Grid.Column="1" Grid.Row="1" Text="User name"/>
+        <TextBlock Grid.Column="1" Grid.Row="3" Text="Password"/>
+        <TextBlock Grid.Column="1" Grid.Row="5" Text="Date of birth"/>
         <Button x:Name="save_profile" Content="Save changes" Grid.Column="5" Grid.Row="7"/>
+        <TextBox x:Name="text_name" Grid.Column="3" Grid.Row="1"/>
+        <PasswordBox x:Name="password_box" Grid.Column="3" Grid.Row="3"/>
+        <DatePicker x:Name="birth_date" Grid.Column="3" Grid.Row="5"/>
     </Grid>
 </Page>

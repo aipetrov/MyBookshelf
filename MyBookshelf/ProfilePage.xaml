@@ -29,9 +29,17 @@
         </Grid.RowDefinitions>
         <TextBlock Grid.Column="1" Grid.Row="3" Text="Read Books"/>
         <TextBlock Grid.Column="1" Grid.Row="5" Text="Recommended books"/>
-        <ListBox x:Name="list_readbooks" Grid.Column="3" Grid.Row="3" Grid.ColumnSpan="3"/>
+        <ListBox x:Name="list_readbooks" Grid.Column="3" Grid.Row="3" Grid.ColumnSpan="3">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock FontSize="16" FontWeight="Bold" Text="{Binding Name}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
         <ListBox x:Name="list_recbooks" Grid.Column="3" Grid.Row="5" Grid.ColumnSpan="3"/>
         <TextBlock x:Name="user_name" Text="Name" Grid.Row="1" Grid.Column="1"/>
-        <Button x:Name="edit_profile" Content="Edit profile" Grid.Row="1" Grid.Column="5"/>
+        <Button x:Name="edit_profile" Content="Edit profile" Grid.Row="1" Grid.Column="5" Click="edit_profile_Click"/>
     </Grid>
 </Page>
