@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyBookshelfData;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,12 @@ namespace MyBookshelf
     /// </summary>
     public partial class EditingProfilePage : Page
     {
-        public EditingProfilePage()
+        Repository repository = new Repository();
+        public EditingProfilePage(Repository _repository)
         {
             InitializeComponent();
+            repository = _repository;
+
         }
     }
 }

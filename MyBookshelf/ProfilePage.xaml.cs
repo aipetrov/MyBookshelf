@@ -21,16 +21,19 @@ namespace MyBookshelf
     /// </summary>
     public partial class ProfilePage : Page
     {
-        public ProfilePage(Repository repository)
+        Repository repository = new Repository();
+
+        public ProfilePage(Repository _repository)
         {
             InitializeComponent();
+            repository = _repository;
             user_name.Text = "Hello, " + repository.AuthorisedUser.Name+ "!";
             list_readbooks.ItemsSource = repository.GetBooks();
         }
 
         private void edit_profile_Click(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.Navigate(new EditingProfilePage(repository));
         }
     }
 }
