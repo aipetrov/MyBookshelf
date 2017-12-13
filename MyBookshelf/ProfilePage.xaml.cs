@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyBookshelfData;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,16 @@ namespace MyBookshelf
     /// </summary>
     public partial class ProfilePage : Page
     {
-        public ProfilePage()
+        public ProfilePage(Repository repository)
         {
             InitializeComponent();
+            user_name.Text = "Hello, " + repository.AuthorisedUser.Name+ "!";
+            list_readbooks.ItemsSource = repository.GetBooks();
+        }
+
+        private void edit_profile_Click(object sender, RoutedEventArgs e)
+        {
+
         }
 
         private void edit_profile_Click(object sender, RoutedEventArgs e)

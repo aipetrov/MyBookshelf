@@ -34,7 +34,7 @@ namespace MyBookshelf
         {
             if (repository.SignedIn(text_login.Text, password_box.Password))
             {
-                NavigationService.Navigate(new ProfilePage());
+                NavigationService.Navigate(new ProfilePage(repository));
             }
             else
             {
