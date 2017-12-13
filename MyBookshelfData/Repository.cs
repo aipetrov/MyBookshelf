@@ -144,7 +144,7 @@ namespace MyBookshelfData
             double rating = sumOfRatings / k;
 
             return Math.Round(rating, 2);
-        }
+        }       
 
     }
 }

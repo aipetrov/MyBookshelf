@@ -26,6 +26,12 @@ namespace MyBookshelf
         {
             InitializeComponent();
             repository = _repository;
+            text_name.Text = repository.AuthorisedUser.Name;
+            birth_date.SelectedDate = repository.AuthorisedUser.Birth;
+        }
+
+        private void save_profile_Click(object sender, RoutedEventArgs e)
+        {
 
         }
     }

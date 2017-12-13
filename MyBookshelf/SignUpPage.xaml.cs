@@ -38,7 +38,7 @@ namespace MyBookshelf
                 }
                 else
                 {
-                    repository.SignUp(text_login.Text, text_password.Text, text_name.Text, text_birth.SelectedDate.Value);
+                    repository.SignUp(text_login.Text, password_box.Password, text_name.Text, text_birth.SelectedDate.Value);
                     MessageBox.Show("You are successfully registered.", "Success", MessageBoxButton.OK, MessageBoxImage.Asterisk);
                     NavigationService.Navigate(new AuthorizationPage());
                 }
