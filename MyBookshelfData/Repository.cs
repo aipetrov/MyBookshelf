@@ -153,6 +153,7 @@ namespace MyBookshelfData
             user.Name = name;
             user.Password = password;
             user.Birth = birth;
+            AuthorisedUser = user;
             context.SaveChanges();
         }
     }
