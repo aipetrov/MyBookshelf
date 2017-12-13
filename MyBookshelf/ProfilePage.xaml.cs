@@ -35,5 +35,10 @@ namespace MyBookshelf
         {
             NavigationService.Navigate(new EditingProfilePage(repository));
         }
+
+        private void edit_profile_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new EditingProfilePage());
+        }
     }
 }
