@@ -13,10 +13,7 @@ namespace MyBookshelfData
         public bool SignedIn(string login, string password)
         {
             Context context = new Context();
-            var users = context.Users.ToList();
-            var authorisedUser = from u in users
-                                 where (u.Login == login && u.Password == password)
-                                 select u;
+            var authorisedUser = context.Users.FirstOrDefault(x => x.Login == login && x.Password == password);
             if (authorisedUser != null)
             {
                 AuthorisedUser = authorisedUser as User;
@@ -28,11 +25,26 @@ namespace MyBookshelfData
             }
         }
 
+        public bool UserExists(string login)
+        {
+            Context context = new Context();
+
+            var user = context.Users.FirstOrDefault(u => u.Login == login);
+                                
+            if (user != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         public void SignUp(string login, string password, string name, DateTime birth)
         {
             Context context = new Context();
-            var users = context.Users.ToList();
-            users.Add(new User { Login = login, Password = password, Name = name, Birth = birth });
+            var users = context.Users.Add(new User { Login = login, Password = password, Name = name, Birth = birth });
             context.SaveChanges();
         }
 

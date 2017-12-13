@@ -32,9 +32,16 @@ namespace MyBookshelf
         {
             try
             {
-                repository.SignUp(text_login.Text, text_password.Text, text_name.Text, text_birth.SelectedDate.Value);
-                MessageBox.Show("You are successfully registered.", "Success", MessageBoxButton.OK, MessageBoxImage.Asterisk);
-                NavigationService.Navigate(new AuthorizationPage());
+                if (repository.UserExists(text_login.Text))
+                {
+                    MessageBox.Show("User with such login already exists.");
+                }
+                else
+                {
+                    repository.SignUp(text_login.Text, text_password.Text, text_name.Text, text_birth.SelectedDate.Value);
+                    MessageBox.Show("You are successfully registered.", "Success", MessageBoxButton.OK, MessageBoxImage.Asterisk);
+                    NavigationService.Navigate(new AuthorizationPage());
+                }
             }
             catch
             {
