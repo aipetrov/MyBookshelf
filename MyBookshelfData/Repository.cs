@@ -146,5 +146,14 @@ namespace MyBookshelfData
             return Math.Round(rating, 2);
         }
 
+        public void EditProfile(string name, string password, DateTime birth)
+        {
+            Context context = new Context();
+            var user = context.Users.FirstOrDefault(x => x.Id == AuthorisedUser.Id);
+            user.Name = name;
+            user.Password = password;
+            user.Birth = birth;
+            context.SaveChanges();
+        }
     }
 }
