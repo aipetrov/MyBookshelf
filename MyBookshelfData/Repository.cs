@@ -144,7 +144,7 @@ namespace MyBookshelfData
             double rating = sumOfRatings / k;
 
             return Math.Round(rating, 2);
-        }
+        }       
 
         public void EditProfile(string name, string password, DateTime birth)
         {

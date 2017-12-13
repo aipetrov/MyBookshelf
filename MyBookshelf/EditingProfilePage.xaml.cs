@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyBookshelfData;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,18 @@ namespace MyBookshelf
     /// </summary>
     public partial class EditingProfilePage : Page
     {
-        public EditingProfilePage()
+        Repository repository = new Repository();
+        public EditingProfilePage(Repository _repository)
         {
             InitializeComponent();
+            repository = _repository;
+            text_name.Text = repository.AuthorisedUser.Name;
+            birth_date.SelectedDate = repository.AuthorisedUser.Birth;
+        }
+
+        private void save_profile_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
