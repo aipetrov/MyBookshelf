@@ -20,18 +20,19 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
-            <RowDefinition Height="6*"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="15*"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="15*"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
-        <TextBlock Grid.Column="1" Grid.Row="3" Text="Read Books"/>
-        <TextBlock Grid.Column="1" Grid.Row="5" Text="Recommended books"/>
-        <ListBox x:Name="list_readbooks" Grid.Column="3" Grid.Row="3" Grid.ColumnSpan="3"/>
-        <ListBox x:Name="list_recbooks" Grid.Column="3" Grid.Row="5" Grid.ColumnSpan="3"/>
-        <TextBlock x:Name="user_name" Text="Name" Grid.Row="1" Grid.Column="1"/>
-        <Button x:Name="edit_profile" Content="Edit profile" Grid.Row="1" Grid.Column="5" Click="edit_profile_Click"/>
+        <Image Source="books.jpg" Stretch="Fill" Opacity="0.4" Grid.ColumnSpan="7" Grid.RowSpan="7"/>
+        <TextBlock Grid.Column="1" Grid.Row="3" Text="Read Books" FontFamily="Trajan Pro" FontSize="16" Foreground="#FF5E0808" VerticalAlignment="Center"/>
+        <TextBlock Grid.Column="1" Grid.Row="5" Text="Recommended books" FontFamily="Trajan Pro" FontSize="9" Foreground="#FF5E0808" VerticalAlignment="Center"/>
+        <ListBox x:Name="list_readbooks" Grid.Column="3" Grid.Row="3" Grid.ColumnSpan="3" Opacity="0.6" Foreground="#FF5E0808" BorderBrush="{x:Null}" FontFamily="Trajan Pro" FontSize="20"/>
+        <ListBox x:Name="list_recbooks" Grid.Column="3" Grid.Row="5" Grid.ColumnSpan="3" Opacity="0.6" Foreground="#FF5E0808" BorderBrush="{x:Null}" FontFamily="Trajan Pro" FontSize="20"/>
+        <TextBlock x:Name="user_name" Text="Name" Grid.Row="1" Grid.Column="1" FontFamily="Trajan Pro" FontSize="22" Foreground="#FF5E0808"/>
+        <Button x:Name="edit_profile" Content="Edit profile" Grid.Row="1" Grid.Column="5" Click="edit_profile_Click" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF7E0707" FontFamily="Tempus Sans ITC" FontSize="24"/>
     </Grid>
 </Page>

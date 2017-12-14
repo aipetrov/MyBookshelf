@@ -9,7 +9,7 @@
       Title="GreetingPage">
 
     <Grid>
-        <Image Source="books.jpg" Stretch="Fill" Opacity="0.5" Grid.ColumnSpan="3" Grid.RowSpan="6"/>
+        <Image Source="books.jpg" Stretch="Fill" Opacity="0.4" Grid.ColumnSpan="3" Grid.RowSpan="6"/>
         <TextBlock Grid.Column="1" Text="Hello, dear reader!" HorizontalAlignment="Center" FontSize="24" FontFamily="Trajan Pro" Foreground="#FF5E0808" FontWeight="Bold"/>
         <Button x:Name="sign_in" Content="Sign In" Grid.Column="1" Grid.Row="2" Click="sign_in_Click" FontSize="36" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF7E0707" FontFamily="Tempus Sans ITC"/>
         <Button x:Name="sign_up" Content="Sign Up" Grid.Column="1" Grid.Row="4" Click="sign_up_Click" FontSize="36" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="#FF7E0707" FontFamily="Tempus Sans ITC"/>
