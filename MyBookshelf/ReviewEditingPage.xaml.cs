@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyBookshelfData;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,7 +21,8 @@ namespace MyBookshelf
     /// </summary>
     public partial class ReviewEditingPage : Page
     {
-        public ReviewEditingPage()
+
+        public ReviewEditingPage(Review _review, Repository _repository)
         {
             InitializeComponent();
         }

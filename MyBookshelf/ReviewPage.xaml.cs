@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyBookshelfData;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,14 +21,29 @@ namespace MyBookshelf
     /// </summary>
     public partial class ReviewPage : Page
     {
-        public ReviewPage()
+        Book book;
+        Repository repository;
+
+        public ReviewPage(Book _book, Repository _repository)
         {
             InitializeComponent();
+            book = _book;
+            repository = _repository;
+            list_reviews.ItemsSource = repository.GetReviews(book);
         }
 
         private void edit_review_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new ReviewEditingPage());
+            NavigationService.Navigate(new ReviewEditingPage(list_reviews.SelectedItem as Review, repository));
+        }
+
+        private void list_reviews_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (repository.ReviewIsYours(list_reviews.SelectedItem as Review))
+            {
+                edit_review.IsEnabled = true;
+                delete_review.IsEnabled = true;
+            }
         }
     }
 }

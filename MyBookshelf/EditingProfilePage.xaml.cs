@@ -32,7 +32,16 @@ namespace MyBookshelf
 
         private void save_profile_Click(object sender, RoutedEventArgs e)
         {
-
+            try
+            {
+                repository.EditProfile(text_name.Text, password_box.Password, birth_date.SelectedDate.Value);
+                NavigationService.Navigate(new ProfilePage(repository));
+            }
+            catch
+            {
+                MessageBox.Show("Fill in all gaps. If you want to change password, enter a new password, oherwise - an old one.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                
+            }
         }
     }
 }
