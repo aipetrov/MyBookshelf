@@ -175,5 +175,12 @@ namespace MyBookshelfData
 
             return distRecommendedBooks;
         }
+
+        public List<Review> GetReviews(Book book)
+        {
+            Context context = new Context();
+            var reviews = context.Reviews.Where(x => x.Book == book).ToList();
+            return reviews;
+        }
     }
 }
