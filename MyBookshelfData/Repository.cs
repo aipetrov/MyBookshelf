@@ -156,5 +156,24 @@ namespace MyBookshelfData
             AuthorisedUser = user;
             context.SaveChanges();
         }
+
+        public List<Book> GetRecommendedBooks()
+        {
+            Context context = new Context();
+            var booksOfUser = context.Books.Where(x => x.Readers.SingleOrDefault(z => z.Id == AuthorisedUser.Id)!=null);
+            var recommendedBooks = new List<Book>();
+            foreach (var book in booksOfUser)
+            {
+                var similarBooks = context.Books.Where(x => (x.Genre == book.Genre || x.Author == book.Author) && CalculateRating(x) > 2);
+                foreach (var similarBook in similarBooks)
+                {
+                    recommendedBooks.Add(similarBook);
+                }
+            }
+
+            var distRecommendedBooks = recommendedBooks.Distinct().ToList();
+
+            return distRecommendedBooks;
+        }
     }
 }
