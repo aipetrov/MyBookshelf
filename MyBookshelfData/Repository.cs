@@ -182,5 +182,19 @@ namespace MyBookshelfData
             var reviews = context.Reviews.Where(x => x.Book == book).ToList();
             return reviews;
         }
+
+        public string GetReviewComment(Review review)
+        {
+            Context context = new Context();
+            var foundReview = context.Reviews.FirstOrDefault(x => x.Id == review.Id);
+            return foundReview.Comment;
+        }
+
+        public int GetReviewRating(Review review)
+        {
+            Context context = new Context();
+            var foundReview = context.Reviews.FirstOrDefault(x => x.Id == review.Id);
+            return foundReview.Rating;
+        }
     }
 }

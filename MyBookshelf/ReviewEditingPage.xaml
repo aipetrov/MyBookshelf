@@ -29,7 +29,7 @@
         <TextBlock Grid.Row="1" Text="New Rating" Grid.Column="1"/>
         <TextBlock Grid.Row="3" Text="New review" Grid.Column="1"/>
         <ComboBox x:Name="new_rating" Grid.Column="3" Grid.ColumnSpan="2" Grid.Row="1"/>
-        <ListBox Grid.ColumnSpan="2" Grid.Column="3"  Grid.Row="3"/>
-        <Button x:Name="save_review" Content="Save new review" Grid.Column="4" Grid.Row="5"/>
+        <TextBox x:Name="new_comment" Grid.ColumnSpan="2" Grid.Column="3"  Grid.Row="3"/>
+        <Button x:Name="save_review" Content="Save new review" Grid.Column="4" Grid.Row="5" Click="save_review_Click"/>
     </Grid>
 </Page>
