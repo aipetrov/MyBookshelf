@@ -15,10 +15,10 @@
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="18*"/>
             <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="8*"/>
-            <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="1*"/>
@@ -27,12 +27,33 @@
             <RowDefinition Height="15*"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
-        <Image Source="books.jpg" Stretch="Fill" Opacity="0.4" Grid.ColumnSpan="7" Grid.RowSpan="7"/>
-        <TextBlock Grid.Column="1" Grid.Row="3" Text="Read Books" FontFamily="Trajan Pro" FontSize="16" Foreground="#FF5E0808" VerticalAlignment="Center"/>
-        <TextBlock Grid.Column="1" Grid.Row="5" Text="Recommended books" FontFamily="Trajan Pro" FontSize="9" Foreground="#FF5E0808" VerticalAlignment="Center"/>
-        <ListBox x:Name="list_readbooks" Grid.Column="3" Grid.Row="3" Grid.ColumnSpan="3" Opacity="0.6" Foreground="#FF5E0808" BorderBrush="{x:Null}" FontFamily="Trajan Pro" FontSize="20"/>
-        <ListBox x:Name="list_recbooks" Grid.Column="3" Grid.Row="5" Grid.ColumnSpan="3" Opacity="0.6" Foreground="#FF5E0808" BorderBrush="{x:Null}" FontFamily="Trajan Pro" FontSize="20"/>
-        <TextBlock x:Name="user_name" Text="Name" Grid.Row="1" Grid.Column="1" FontFamily="Trajan Pro" FontSize="22" Foreground="#FF5E0808"/>
-        <Button x:Name="edit_profile" Content="Edit profile" Grid.Row="1" Grid.Column="5" Click="edit_profile_Click" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF7E0707" FontFamily="Tempus Sans ITC" FontSize="24"/>
+        <Rectangle Fill="#FFD38377" Grid.ColumnSpan="2" Grid.RowSpan="9" Height="Auto" />
+        <Rectangle Fill="#FFE8C6C8" Grid.RowSpan="9" Height="Auto"  Grid.Column="2" Grid.ColumnSpan="3"/>
+        <TextBlock x:Name="user_name" Text="User name"  Grid.Row="1" Grid.Column="1" FontFamily="Trajan Pro" FontSize="18" Foreground="#FF5E0808"/>
+        <TextBlock Grid.Column="1" Grid.Row="5" Text="Read Books" FontFamily="Trajan Pro" FontSize="16" Foreground="#FF5E0808" VerticalAlignment="Center"/>
+        <TextBlock Grid.Column="1" Grid.Row="7" Text="Recommended books" FontFamily="Trajan Pro" FontSize="12" Foreground="#FF5E0808" VerticalAlignment="Center"/>
+        <Button x:Name="edit_profile" Content="Edit profile" Grid.Row="3" Grid.Column="1" Click="edit_profile_Click" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF7E0707" FontFamily="Tempus Sans ITC" FontSize="16" HorizontalContentAlignment="Left"/>
+        <ScrollViewer HorizontalAlignment="Left" Width="342" Grid.ColumnSpan="3" Grid.Column="3" Grid.Row="5" >
+            <Canvas Grid.Row="6" Grid.Column="4">
+                <Rectangle Fill="#FFE6DEF2" Height="130" Width="325"/>
+                <TextBlock x:Name="read_image" Height="110" Width="89" Canvas.Left="10" Canvas.Top="10"/>
+                <TextBlock Text="Title" x:Name="read_title" Height="17" Width="89" Canvas.Left="115" Canvas.Top="10" FontSize="16" FontFamily="Blogger Sans" Foreground="#FF5E0808"/>
+                <TextBlock Text="Author" x:Name="read_author" Height="17" Width="89" Canvas.Left="115" Canvas.Top="32" FontFamily="Blogger Sans" FontSize="13" Foreground="#FF5E0808"/>
+                <TextBlock Text="Genre" x:Name="read_genre" Height="17" Width="89" Canvas.Left="115" Canvas.Top="54" FontFamily="Blogger Sans" FontSize="13" Foreground="#FF5E0808"/>
+                <TextBlock Text="Rating" x:Name="read_rating" Height="17" Width="89" Canvas.Left="225" Canvas.Top="10" FontFamily="Blogger Sans" FontSize="13" Foreground="#FF5E0808"/>
+                <ListBox x:Name="list_description" Height="44" Width="199" Canvas.Left="115" Canvas.Top="76" FontStyle="Italic" FontFamily="Blogger Sans" FontSize="13" Opacity="0.7" BorderBrush="{x:Null}" Foreground="#FFD38377" />
+            </Canvas>
+        </ScrollViewer>
+        <ScrollViewer HorizontalAlignment="Left" Width="342" Grid.Column="3" Grid.Row="7">
+            <Canvas Grid.Row="6" Grid.Column="4">
+                <Rectangle Fill="#FFDEECF2" Height="130" Width="325"/>
+                <TextBlock x:Name="rec_image" Height="110" Width="89" Canvas.Left="10" Canvas.Top="10"/>
+                <TextBlock Text="Title" x:Name="rec_title" Height="17" Width="89" Canvas.Left="115" Canvas.Top="10" FontSize="16" FontFamily="Blogger Sans" Foreground="#FF5E0808"/>
+                <TextBlock Text="Author" x:Name="rec_author" Height="17" Width="89" Canvas.Left="115" Canvas.Top="32" FontFamily="Blogger Sans" FontSize="13" Foreground="#FF5E0808"/>
+                <TextBlock Text="Genre" x:Name="rec_genre" Height="17" Width="89" Canvas.Left="115" Canvas.Top="54" FontFamily="Blogger Sans" FontSize="13" Foreground="#FF5E0808"/>
+                <TextBlock Text="Rating" x:Name="rec_rating" Height="17" Width="89" Canvas.Left="225" Canvas.Top="10" FontFamily="Blogger Sans" FontSize="13" Foreground="#FF5E0808"/>
+                <ListBox x:Name="rec_description" Height="44" Width="199" Canvas.Left="115" Canvas.Top="76" FontStyle="Italic" FontFamily="Blogger Sans" FontSize="13" Opacity="0.7" BorderBrush="{x:Null}" Foreground="#FFD38377"/>
+            </Canvas>
+        </ScrollViewer>
     </Grid>
 </Page>

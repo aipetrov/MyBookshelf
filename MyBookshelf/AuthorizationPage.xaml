@@ -26,11 +26,12 @@
             <RowDefinition Height="6*"/>
             <RowDefinition Height="6*"/>
         </Grid.RowDefinitions>
-        <Image Source="books.jpg" Stretch="Fill" Opacity="0.4" Grid.ColumnSpan="7" Grid.RowSpan="7"/>
+        <Rectangle Fill="#FFD38377" Grid.ColumnSpan="2" Grid.RowSpan="7" Height="Auto" />
+        <Rectangle Fill="#FFE8C6C8" Grid.RowSpan="7" Height="Auto"  Grid.Column="2" Grid.ColumnSpan="5"/>
         <TextBlock Grid.Column="1" Grid.Row="1" Text="Login" FontFamily="Trajan Pro" FontSize="22" Foreground="#FF5E0808"/>
         <TextBlock Grid.Column="1" Grid.Row="3" Text="Password" FontFamily="Trajan Pro" FontSize="22" Foreground="#FF5E0808"/>
-        <TextBox x:Name="text_login" Grid.Column="3" Grid.Row="1"  Opacity="0.6" Foreground="#FF5E0808" FontFamily="Trajan Pro" FontSize="22" BorderBrush="{x:Null}" SelectionBrush="{x:Null}"/>
-        <PasswordBox x:Name="password_box" Grid.Column="3" Grid.Row="3"  Opacity="0.6" Foreground="#FF5E0808" FontFamily="Trajan Pro" FontSize="22" BorderBrush="{x:Null}" SelectionBrush="{x:Null}"/>
+        <TextBox x:Name="text_login" Grid.Column="3" Grid.ColumnSpan="3" Grid.Row="1"  Opacity="0.6" Foreground="#FF5E0808" FontFamily="Trajan Pro" FontSize="22" BorderBrush="{x:Null}" SelectionBrush="{x:Null}"/>
+        <PasswordBox x:Name="password_box" Grid.ColumnSpan="3" Grid.Column="3" Grid.Row="3"  Opacity="0.6" Foreground="#FF5E0808" FontFamily="Trajan Pro" FontSize="22" BorderBrush="{x:Null}" SelectionBrush="{x:Null}"/>
         <Button x:Name="btn_signin" Grid.Column="5" Content="Sign In" Grid.Row="5" Click="btn_signin_Click" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF7E0707" FontFamily="Tempus Sans ITC" FontSize="24"/>
     </Grid>
 </Page>
