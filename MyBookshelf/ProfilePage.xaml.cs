@@ -28,7 +28,7 @@ namespace MyBookshelf
             InitializeComponent();
             repository = _repository;
             user_name.Text = "Hello, " + repository.AuthorisedUser.Name+ "!";
-            list_read.ItemsSource = repository.GetBooks();
+            listbox_read.ItemsSource = repository.GetReadBooks();
         }
 
         private void edit_profile_Click(object sender, RoutedEventArgs e)

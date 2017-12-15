@@ -34,7 +34,7 @@
         <TextBlock Grid.Column="1" Grid.Row="7" Text="Recommended books" FontFamily="Trajan Pro" FontSize="11" Foreground="#FF5E0808" VerticalAlignment="Center"/>
         <Button x:Name="edit_profile" Content="Edit profile" Grid.Row="3" Grid.Column="1" Click="edit_profile_Click" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF7E0707" FontFamily="Tempus Sans ITC" FontSize="16" HorizontalContentAlignment="Left"/>
 
-        <ListBox x:Name="list_read" HorizontalAlignment="Left" Width="342" Grid.ColumnSpan="3" Grid.Column="3" Grid.Row="5" >
+        <ListBox x:Name="listbox_read" HorizontalAlignment="Left" Width="342" Grid.ColumnSpan="3" Grid.Column="3" Grid.Row="5" >
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid Background="Azure" Grid.Column="3" Grid.Row="5" MinWidth="320">
@@ -58,10 +58,10 @@
                             <RowDefinition Height="8*"/>
                             <RowDefinition Height="1*"/>
                         </Grid.RowDefinitions>
-                        <TextBlock Text="{Binding Title}" Grid.Column="1" Grid.Row="1"/>
+                        <TextBlock  Text="{Binding Title}" Grid.Column="1" Grid.Row="1"/>
                         <TextBlock Text="{Binding Author}" Grid.Column="3" Grid.Row="1"/>
                         <TextBlock Text="{Binding Genre}" Grid.Column="5" Grid.Row="1"/>
-                        <TextBlock Text="{Binding Description}" Grid.Column="1" Grid.Row="7" Grid.ColumnSpan="5"/>
+                        <TextBlock Text="{Binding Description}"  TextWrapping="Wrap" Grid.Column="1" Grid.Row="7" Grid.ColumnSpan="5"/>
                     </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>
