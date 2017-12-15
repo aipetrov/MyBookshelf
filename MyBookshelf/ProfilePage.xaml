@@ -39,35 +39,37 @@
         <ListBox x:Name="listbox_read" Grid.Column="3" Grid.Row="5" Grid.ColumnSpan="3" Background="{x:Null}" BorderBrush="{x:Null}"  >
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <Grid Background="Azure" Grid.Column="3" Grid.Row="5" MinWidth="480" MaxWidth="200">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="1*"/>
-                            <ColumnDefinition Width="6*"/>
-                            <ColumnDefinition Width="1*"/>
-                            <ColumnDefinition Width="6*"/>
-                            <ColumnDefinition Width="1*"/>
-                            <ColumnDefinition Width="6*"/>
-                            <ColumnDefinition Width="1*"/>
-                        </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="1*"/>
-                            <RowDefinition Height="3*"/>
-                            <RowDefinition Height="1*"/>
-                            <RowDefinition Height="3*"/>
-                            <RowDefinition Height="1*"/>
-                            <RowDefinition Height="3*"/>
-                            <RowDefinition Height="1*"/>
-                            <RowDefinition Height="8*"/>
-                            <RowDefinition Height="1*"/>
-                        </Grid.RowDefinitions>
-                        <TextBlock Text="{Binding Title}" Grid.Column="1" Grid.Row="1" FontSize="12" FontFamily="Blogger Sans" Foreground="#FF5E0808"/>
-                        <TextBlock Text="{Binding Author}" Grid.Column="3" Grid.Row="1" FontSize="10" FontFamily="Blogger Sans" Foreground="#FF5E0808"/>
-                        <TextBlock Text="{Binding Genre}" Grid.Column="5" Grid.Row="1" FontSize="10" FontFamily="Blogger Sans" Foreground="#FF5E0808"/>
-                        <TextBlock Text="{Binding Description}"  TextWrapping="Wrap" Grid.Column="1" Grid.Row="7" Grid.ColumnSpan="5" FontSize="10" FontFamily="Blogger Sans" Foreground="#FF5E0808" FontStyle="Italic"/>
+            <Grid Background="Azure" Grid.Column="3" Grid.Row="5" Grid.ColumnSpan="3" MinWidth="480" MaxWidth="250">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="3*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="3*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="3*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="8*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+            <Image Source="{Binding ImagePath}" Grid.Row="1" Grid.RowSpan="7" Grid.Column="1"/>
+            <TextBlock Text="{Binding Title}" Grid.Column="3" Grid.Row="1" Grid.ColumnSpan="3" FontSize="12" FontFamily="Blogger Sans" Foreground="#FF5E0808"/>
+            <TextBlock Text="{Binding Author}" Grid.Column="3" Grid.ColumnSpan="3" Grid.Row="3" FontSize="10" FontFamily="Blogger Sans" Foreground="#FF5E0808"/>
+            <TextBlock Text="{Binding Genre}" Grid.Column="3" Grid.ColumnSpan="3" Grid.Row="5" FontSize="10" FontFamily="Blogger Sans" Foreground="#FF5E0808"/>
+                        <TextBlock Text="{Binding Description}"  TextWrapping="Wrap" Grid.Column="3" Grid.Row="7" Grid.ColumnSpan="3" FontSize="10" FontFamily="Blogger Sans" Foreground="#FF5E0808" FontStyle="Italic"/>
                     </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
+
         <ListBox x:Name="listbox_recommend" Grid.Column="3" Grid.Row="7" Grid.ColumnSpan="3" Background="{x:Null}" BorderBrush="{x:Null}"  >
             <ListBox.ItemTemplate>
                 <DataTemplate>
@@ -102,6 +104,6 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <Button x:Name="all_books" Content="Show all books" Grid.Column="4" Grid.Row="1" Grid.RowSpan="3" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF7E0707" FontFamily="Tempus Sans ITC" FontSize="24" Grid.ColumnSpan="2"/>
+        <Button x:Name="all_books" Content="Show all books" Grid.Column="4" Grid.Row="1" Grid.RowSpan="3" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF7E0707" FontFamily="Tempus Sans ITC" FontSize="24" Grid.ColumnSpan="2" Click="all_books_Click"/>
     </Grid>
 </Page>
