@@ -48,16 +48,18 @@ namespace MyBookshelfData
             context.SaveChanges();
         }
 
-        public List<string> GetBooks()
+        public List<Book> GetBooks()
         {
             Context context = new Context();
-            var books = context.Books.ToList();
-            List<string> gotBooks = new List<string>();
-            foreach (var book in books)
-            {
-                gotBooks.Add(string.Format("\"{0}\" - {1} ({2})", book.Title, book.Author, book.Genre));
-            }
-            return gotBooks;
+            var books = context.Books.ToList();            
+            return books;
+        }
+
+        public List<Book> GetReadBooks()
+        {
+            Context context = new Context();
+            var readBooks = context.Books.Where(x => x.Readers.FirstOrDefault(k => k.Id==AuthorisedUser.Id)!=null).ToList();
+            return readBooks;
         }
 
         public void MarkBookAsRead(Book book)
@@ -80,7 +82,7 @@ namespace MyBookshelfData
         {
             Context context = new Context();
             var user = context.Users.FirstOrDefault(x => x.Id == AuthorisedUser.Id);
-            if (user.ReadBooks.SingleOrDefault(x => x.Id == book.Id) != null)
+            if (user.ReadBooks.FirstOrDefault(x => x.Id == book.Id) != null)
             {
                 return true;
             }
@@ -119,7 +121,7 @@ namespace MyBookshelfData
         {
             Context context = new Context();
             var reviews = context.Reviews.Where(x => x.User == AuthorisedUser);
-            if (reviews.SingleOrDefault(x => x.Id == review.Id) != null)
+            if (reviews.FirstOrDefault(x => x.Id == review.Id) != null)
             {
                 return true;
             }
@@ -160,7 +162,7 @@ namespace MyBookshelfData
         public List<Book> GetRecommendedBooks()
         {
             Context context = new Context();
-            var booksOfUser = context.Books.Where(x => x.Readers.SingleOrDefault(z => z.Id == AuthorisedUser.Id)!=null);
+            var booksOfUser = context.Books.Where(x => x.Readers.FirstOrDefault(z => z.Id == AuthorisedUser.Id)!=null);
             var recommendedBooks = new List<Book>();
             foreach (var book in booksOfUser)
             {
