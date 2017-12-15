@@ -31,7 +31,8 @@
         <TextBlock Text="New rating" Grid.Column="1" Grid.Row="1" FontFamily="Trajan Pro" FontSize="18" Foreground="#FF5E0808"/>
         <TextBlock Grid.Row="3" Text="New comment" Grid.Column="1" FontFamily="Trajan Pro" FontSize="16" Foreground="#FF5E0808"/>
         <ComboBox x:Name="new_rating" Grid.Column="3" Grid.ColumnSpan="2" Grid.Row="1"/>
-        <ListBox Grid.ColumnSpan="2" Grid.Column="3"  Grid.Row="3" Opacity="0.6" Foreground="#FF5E0808" BorderBrush="{x:Null}" FontFamily="Trajan Pro" FontSize="22"/>
-        <Button x:Name="save_review" Content="Save new review" Grid.Column="4" Grid.Row="5" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF7E0707" FontFamily="Tempus Sans ITC" FontSize="22"/>
+        <TextBox x:Name="new_comment" Grid.ColumnSpan="2" Grid.Column="3"  Grid.Row="3" Opacity="0.6" Foreground="#FF5E0808" BorderBrush="{x:Null}" FontFamily="Trajan Pro" FontSize="22"/>
+        <Button x:Name="save_review" Content="Save new review" Click="save_review_Click" Grid.Column="4" Grid.Row="5" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF7E0707" FontFamily="Tempus Sans ITC" FontSize="22"/>
+
     </Grid>
 </Page>

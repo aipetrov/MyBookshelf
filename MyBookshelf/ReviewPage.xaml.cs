@@ -30,6 +30,7 @@ namespace MyBookshelf
             book = _book;
             repository = _repository;
             list_reviews.ItemsSource = repository.GetReviews(book);
+            textblock_book.Text = book.Title;
         }
 
         private void edit_review_Click(object sender, RoutedEventArgs e)
@@ -43,6 +44,36 @@ namespace MyBookshelf
             {
                 edit_review.IsEnabled = true;
                 delete_review.IsEnabled = true;
+            }
+        }
+
+        private void delete_review_Click(object sender, RoutedEventArgs e)
+        {
+            repository.DeleteReview(list_reviews.SelectedItem as Review);
+        }
+
+        private void send_review_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                repository.AddNewReview(book, int.Parse(rating_combobox.Text), write_review.Text);
+                MessageBox.Show("Your review is successfuly sent.", "Success", MessageBoxButton.OK, MessageBoxImage.Asterisk);
+            }
+            catch
+            {
+                MessageBox.Show("Fill in the gaps correctly.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private void write_review_DataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            if (write_review.Text!="")
+            {
+                send_review.IsEnabled = true;
+            }
+            else
+            {
+                send_review.IsEnabled = false;
             }
         }
     }
