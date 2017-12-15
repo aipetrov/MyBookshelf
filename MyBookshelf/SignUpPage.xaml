@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:MyBookshelf"
       mc:Ignorable="d" 
-      d:DesignHeight="350" d:DesignWidth="550"
+      d:DesignHeight="500" d:DesignWidth="800"
       Title="SignUpPage">
 
     <Grid>
@@ -32,14 +32,14 @@
         </Grid.RowDefinitions>
         <Rectangle Fill="#FFD38377" Grid.ColumnSpan="2" Grid.RowSpan="11" Height="Auto" />
         <Rectangle Fill="#FFE8C6C8" Grid.RowSpan="11" Height="Auto"  Grid.Column="2" Grid.ColumnSpan="4"/>
-        <TextBlock Grid.Column="1" Grid.Row="1" Text="User name" FontFamily="Trajan Pro" FontSize="22" Foreground="#FF5E0808"/>
-        <TextBlock Grid.Column="1" Grid.Row="3" Text="Login" FontFamily="Trajan Pro" FontSize="22" Foreground="#FF5E0808"/>
-        <TextBlock Grid.Column="1" Grid.Row="5" Text="Password" FontFamily="Trajan Pro" FontSize="22" Foreground="#FF5E0808"/>
-        <TextBlock Grid.Column="1" Grid.Row="7" Text="Date of birth" FontFamily="Trajan Pro" FontSize="22" Foreground="#FF5E0808"/>
-        <TextBox x:Name="text_name" Grid.Column="3" Grid.Row="1" Grid.ColumnSpan="2" Opacity="0.6" Foreground="#FF5E0808" SelectionBrush="{x:Null}" BorderBrush="{x:Null}" FontFamily="Trajan Pro" FontSize="22"/>
-        <TextBox x:Name="text_login" Grid.Column="3" Grid.Row="3" Grid.ColumnSpan="2" Opacity="0.6" Foreground="#FF5E0808" FontFamily="Trajan Pro" FontSize="22" Background="White" SelectionBrush="{x:Null}" BorderBrush="{x:Null}"/>
-        <PasswordBox x:Name="password_box" Grid.Column="3" Grid.Row="5" Grid.ColumnSpan="2" Opacity="0.6" Foreground="#FF5E0808" FontFamily="Trajan Pro" FontSize="22" BorderBrush="{x:Null}" SelectionBrush="{x:Null}"/>
-        <DatePicker x:Name="text_birth" Grid.Column="3" Grid.Row="7" Grid.ColumnSpan="2" Opacity="0.6" Foreground="#FF5E0808" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Trajan Pro" FontSize="22"/>
-        <Button x:Name="btn_signup" Content="Sign Up" Grid.Column="4" Grid.Row="9" Click="btn_signup_Click" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF7E0707" FontFamily="Tempus Sans ITC" FontSize="24"/>
+        <TextBlock Grid.Column="1" Grid.Row="1" Text="User name" FontFamily="Trajan Pro" FontSize="26" Foreground="#FF5E0808"/>
+        <TextBlock Grid.Column="1" Grid.Row="3" Text="Login" FontFamily="Trajan Pro" FontSize="26" Foreground="#FF5E0808"/>
+        <TextBlock Grid.Column="1" Grid.Row="5" Text="Password" FontFamily="Trajan Pro" FontSize="26" Foreground="#FF5E0808"/>
+        <TextBlock Grid.Column="1" Grid.Row="7" Text="Date of birth" FontFamily="Trajan Pro" FontSize="26" Foreground="#FF5E0808"/>
+        <TextBox x:Name="text_name" Grid.Column="3" Grid.Row="1" Grid.ColumnSpan="2" Opacity="0.6" Foreground="#FF5E0808" SelectionBrush="{x:Null}" BorderBrush="{x:Null}" FontFamily="Trajan Pro" FontSize="26"/>
+        <TextBox x:Name="text_login" Grid.Column="3" Grid.Row="3" Grid.ColumnSpan="2" Opacity="0.6" Foreground="#FF5E0808" FontFamily="Trajan Pro" FontSize="26" Background="White" SelectionBrush="{x:Null}" BorderBrush="{x:Null}"/>
+        <PasswordBox x:Name="password_box" Grid.Column="3" Grid.Row="5" Grid.ColumnSpan="2" Opacity="0.6" Foreground="#FF5E0808" FontFamily="Trajan Pro" FontSize="26" BorderBrush="{x:Null}" SelectionBrush="{x:Null}"/>
+        <DatePicker x:Name="text_birth" Grid.Column="3" Grid.Row="7" Grid.ColumnSpan="2" Opacity="0.6" Foreground="#FF5E0808" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Trajan Pro" FontSize="26"/>
+        <Button x:Name="btn_signup" Content="Sign Up" Grid.Column="4" Grid.Row="9" Click="btn_signup_Click" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF7E0707" FontFamily="Tempus Sans ITC" FontSize="30"/>
     </Grid>
 </Page>
