@@ -36,7 +36,7 @@
         <TextBlock Grid.Column="1" Grid.Row="7" Text="Recommended books" FontFamily="Trajan Pro" FontSize="20" Foreground="#FF5E0808" VerticalAlignment="Center" TextWrapping="Wrap"/>
         <Button x:Name="edit_profile" Content="Edit profile" Grid.Row="3" Grid.Column="1" Click="edit_profile_Click" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF7E0707" FontFamily="Tempus Sans ITC" FontSize="16" HorizontalContentAlignment="Left"/>
 
-        <ListBox x:Name="listbox_read" Grid.Column="3" Grid.Row="5" Grid.ColumnSpan="3" Background="{x:Null}" BorderBrush="{x:Null}"  >
+        <ListBox x:Name="listbox_read" Grid.Column="3" Grid.Row="5" Grid.ColumnSpan="3" Background="{x:Null}" BorderBrush="{x:Null}" SelectionChanged="listbox_read_SelectionChanged" >
             <ListBox.ItemTemplate>
                 <DataTemplate>
             <Grid Background="Azure" Grid.Column="3" Grid.Row="5" Grid.ColumnSpan="3" MinWidth="480" MaxWidth="250">
@@ -70,7 +70,7 @@
             </ListBox.ItemTemplate>
         </ListBox>
 
-        <ListBox x:Name="listbox_recommend" Grid.Column="3" Grid.Row="7" Grid.ColumnSpan="3" Background="{x:Null}" BorderBrush="{x:Null}"  >
+        <ListBox x:Name="listbox_recommend" Grid.Column="3" Grid.Row="7" Grid.ColumnSpan="3" Background="{x:Null}" BorderBrush="{x:Null}"  SelectionChanged="listbox_read_SelectionChanged">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid Background="#FFEDE7F2" Grid.Column="3" Grid.Row="7" Grid.ColumnSpan="3" MinWidth="480" MaxWidth="250">
