@@ -43,7 +43,7 @@
         <Image x:Name="book_image" Grid.Column="1" Grid.Row="1" Grid.RowSpan="7"/>
         <TextBlock x:Name="book_description" Grid.ColumnSpan="6" Grid.Column="1" Grid.Row="9" FontFamily="Trajan Pro" FontSize="20" Foreground="#FF5E0808"/>
         <Button x:Name="book_review" Content="Review" Grid.Column="4" Grid.Row="11" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF7E0707" FontFamily="Tempus Sans ITC" FontSize="26" Click="book_review_Click"/>
-        <Button x:Name="button_add" Content="Mark as read" Grid.Column="6" Grid.Row="11" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF7E0707" FontFamily="Tempus Sans ITC" FontSize="26"/>
+        <Button x:Name="button_add" Content="Mark as read" Grid.Column="6" Grid.Row="11" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF7E0707" FontFamily="Tempus Sans ITC" FontSize="26" Click="button_add_Click"/>
         <Button x:Name="button_delete" Content="Delete from read" Grid.Column="1" Grid.Row="11" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF7E0707" FontFamily="Tempus Sans ITC" FontSize="26" Click="button_delete_Click"/>
     </Grid>
 </Page>

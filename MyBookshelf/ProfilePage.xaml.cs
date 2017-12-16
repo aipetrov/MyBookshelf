@@ -31,9 +31,26 @@ namespace MyBookshelf
             listbox_read.ItemsSource = repository.GetReadBooks();
             listbox_recommend.ItemsSource = repository.GetRecommendedBooks();
         }
+        
+        public void ShowReadBooks(List<Book> readBooks)
+        {
+            listbox_read.ItemsSource = readBooks;
+        }
+
+        public void ShowRecommendBooks(List<Book> recommendBooks)
+        {
+            listbox_recommend.ItemsSource = recommendBooks;
+        }
+
+
+        public void ShowName(Context context)
+        {
+            user_name.Text = "Hello, " + repository.AuthorisedUser.Name + "!";
+        }
 
         private void edit_profile_Click(object sender, RoutedEventArgs e)
         {
+            repository.ContextUpdated += ShowName;
             NavigationService.Navigate(new EditingProfilePage(repository));
         }
 
@@ -44,7 +61,14 @@ namespace MyBookshelf
 
         private void listbox_read_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            repository.ListBookUpdated += ShowReadBooks;
             NavigationService.Navigate(new InformationAboutBooksPage(listbox_read.SelectedItem as Book, repository));
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            ShowRecommendBooks(repository.GetRecommendedBooks());
+            ShowReadBooks(repository.GetReadBooks());
         }
     }
 }

@@ -36,6 +36,8 @@ namespace MyBookshelf
         private void save_review_Click(object sender, RoutedEventArgs e)
         {
             repository.EditReview(review, int.Parse(new_rating.Text), new_comment.Text);
+            MessageBox.Show("Your review is successfully edited.", "Success", MessageBoxButton.OK, MessageBoxImage.Asterisk);
+            NavigationService.GoBack();
         }
     }
 }
