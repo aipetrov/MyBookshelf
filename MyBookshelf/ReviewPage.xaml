@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:MyBookshelf"
       mc:Ignorable="d" 
-      d:DesignHeight="350" d:DesignWidth="550"
+      d:DesignHeight="500" d:DesignWidth="800"
       Title="ReviewPage">
 
     <Grid>
@@ -33,24 +33,37 @@
         </Grid.RowDefinitions>
         <Rectangle Fill="#FFD38377" Grid.ColumnSpan="4" Grid.RowSpan="11" Height="Auto" />
         <Rectangle Fill="#FFE8C6C8" Grid.RowSpan="11" Height="Auto"  Grid.Column="4" Grid.ColumnSpan="3"/>
-        <ListBox x:Name="list_reviews" Grid.Column="1" Grid.Row="7" Grid.ColumnSpan="2" Grid.RowSpan="3" Opacity="0.6" Foreground="#FF5E0808" BorderBrush="{x:Null}" FontFamily="Trajan Pro" FontSize="22">
+        <ListBox x:Name="list_reviews" Grid.Column="1" Grid.Row="7" Grid.ColumnSpan="2" Grid.RowSpan="3" Opacity="0.6" Foreground="#FF5E0808" BorderBrush="{x:Null}" FontFamily="Trajan Pro" FontSize="20">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock FontSize="16" FontWeight="Bold" Text="{Binding Name}"/>
-                        <TextBlock FontSize="12" Text="("/>
-                        <TextBlock FontSize="12" Text="{Binding Data}"/>
-                        <TextBlock FontSize="12" Text=")"/>
-                        <TextBlock FontSize="16" Text="Rating:"/>
-                        <TextBlock FontSize="16" FontWeight="Bold" Text="{Binding Rating}"/>
-                        <TextBlock FontSize="14" Text="{Binding Comment}"/>
-                    </StackPanel>
+                    <Grid Grid.Column="1" Grid.Row="7" Grid.ColumnSpan="2" Grid.RowSpan="3" MinWidth="440" MaxWidth="250">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="6*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="6*"/>
+                            <ColumnDefinition Width="4*"/>
+                            <ColumnDefinition Width="6*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="8*"/>
+                            <RowDefinition Height="1*"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="{Binding Title}" Grid.Column="1" Grid.Row="1" FontSize="12" FontFamily="Blogger Sans" Foreground="#FF5E0808" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding Data}" Grid.Column="3" Grid.Row="1" FontSize="9" FontFamily="Blogger Sans" Foreground="#FF9C9191"/>
+                        <TextBlock Text="{Binding Rating}" Grid.Column="5" Grid.Row="1" FontSize="14" FontFamily="Blogger Sans" Foreground="#FF5E0808" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding Comment}" Grid.Column="1" Grid.ColumnSpan="5" Grid.Row="3" FontSize="10" FontFamily="Blogger Sans" Foreground="#FF5E0808"/>
+                    </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <Button x:Name="send_review" Content="Send review" Grid.Column="5" Grid.Row="5" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF7E0707" FontFamily="Tempus Sans ITC" FontSize="24" IsEnabled="False"/>
-        <TextBox x:Name="write_review" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="3" Grid.RowSpan="3" Opacity="0.6" Foreground="#FF5E0808" SelectionBrush="{x:Null}" BorderBrush="{x:Null}" FontFamily="Trajan Pro" FontSize="22" DataContextChanged="write_review_DataContextChanged"/>
-        <TextBlock x:Name="textblock_book" Text="Name of the book" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" FontFamily="Trajan Pro" Foreground="#FF5E0808" FontSize="18"/>
+        <Button x:Name="send_review" Content="Send review" Grid.Column="5" Grid.Row="5" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF7E0707" FontFamily="Tempus Sans ITC" FontSize="30"/>
+        <TextBox x:Name="write_review" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="3" Grid.RowSpan="3" Opacity="0.6" Foreground="#FF5E0808" SelectionBrush="{x:Null}" BorderBrush="{x:Null}" FontFamily="Trajan Pro" FontSize="20" DataContextChanged="write_review_DataContextChanged"/>
+        <TextBlock x:Name="textblock_book" Text="Name of the book" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" FontFamily="Trajan Pro" Foreground="#FF5E0808" FontSize="22"/>
         <ComboBox x:Name="rating_combobox" Grid.Column="5" Grid.Row="3">
             <ComboBoxItem Content="1"></ComboBoxItem>
             <ComboBoxItem Content="2"></ComboBoxItem>
@@ -58,7 +71,7 @@
             <ComboBoxItem Content="4"></ComboBoxItem>
             <ComboBoxItem Content="5"></ComboBoxItem>
         </ComboBox>
-        <Button x:Name="edit_review" Content="Edit review" Grid.Column="5" Grid.Row="7" Click="edit_review_Click" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF7E0707" FontFamily="Tempus Sans ITC" FontSize="24" IsEnabled="False"/>
-        <Button x:Name="delete_review" Content="Delete review" Grid.Column="5" Grid.Row="9" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF7E0707" FontFamily="Tempus Sans ITC" FontSize="24" IsEnabled="False"/>
+        <Button x:Name="edit_review" Content="Edit review" Grid.Column="5" Grid.Row="7" Click="edit_review_Click" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF7E0707" FontFamily="Tempus Sans ITC" FontSize="30"/>
+        <Button x:Name="delete_review" Content="Delete review" Grid.Column="5" Grid.Row="9" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF7E0707" FontFamily="Tempus Sans ITC" FontSize="30" Click="delete_review_Click"/>
     </Grid>
 </Page>

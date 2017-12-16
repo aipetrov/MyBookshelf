@@ -187,7 +187,7 @@ namespace MyBookshelfData
             var recommendedBooks = new List<Book>();
             foreach (var book in booksOfUser)
             {
-                var similarBooks = context.Books.Where(x => (x.Genre == book.Genre || x.Author == book.Author) && CalculateRating(x) > 2);
+                var similarBooks = context.Books.Where(x => x.Genre == book.Genre || x.Author == book.Author).ToList();
                 foreach (var similarBook in similarBooks)
                 {
                     recommendedBooks.Add(similarBook);

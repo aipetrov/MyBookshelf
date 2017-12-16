@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:MyBookshelf"
       mc:Ignorable="d" 
-      d:DesignHeight="350" d:DesignWidth="550"
+      d:DesignHeight="500" d:DesignWidth="800"
       Title="EditingProfilePage">
 
     <Grid>
@@ -31,12 +31,12 @@
         </Grid.RowDefinitions>
         <Rectangle Fill="#FFD38377" Grid.ColumnSpan="2" Grid.RowSpan="9" Height="Auto" />
         <Rectangle Fill="#FFE8C6C8" Grid.RowSpan="9" Height="Auto"  Grid.Column="2" Grid.ColumnSpan="5"/>
-        <TextBlock Grid.Column="1" Grid.Row="1" Text="User name" FontFamily="Trajan Pro" FontSize="22" Foreground="#FF5E0808"/>
-        <TextBlock Grid.Column="1" Grid.Row="3" Text="Password" FontFamily="Trajan Pro" FontSize="22" Foreground="#FF5E0808"/>
-        <TextBlock Grid.Column="1" Grid.Row="5" Text="Date of birth" FontFamily="Trajan Pro" FontSize="22" Foreground="#FF5E0808"/>
-        <Button x:Name="save_profile" Content="Save changes" Grid.Column="5" Grid.Row="7" Click="save_profile_Click" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF7E0707" FontFamily="Tempus Sans ITC" FontSize="20"/>
-        <TextBox x:Name="text_name" Grid.ColumnSpan="3" Grid.Column="3" Grid.Row="1" Opacity="0.6" Foreground="#FF5E0808" SelectionBrush="{x:Null}" BorderBrush="{x:Null}" FontFamily="Trajan Pro" FontSize="22"/>
-        <PasswordBox x:Name="password_box" Grid.ColumnSpan="3" Grid.Column="3" Grid.Row="3" Opacity="0.6" Foreground="#FF5E0808" SelectionBrush="{x:Null}" BorderBrush="{x:Null}" FontFamily="Trajan Pro" FontSize="22"/>
-        <DatePicker x:Name="birth_date" Grid.ColumnSpan="3" Grid.Column="3" Grid.Row="5" Opacity="0.6" Foreground="#FF5E0808" BorderBrush="{x:Null}" FontFamily="Trajan Pro" FontSize="22"/>
+        <TextBlock Grid.Column="1" Grid.Row="1" Text="User name" FontFamily="Trajan Pro" FontSize="28" Foreground="#FF5E0808"/>
+        <TextBlock Grid.Column="1" Grid.Row="3" Text="Password" FontFamily="Trajan Pro" FontSize="28" Foreground="#FF5E0808"/>
+        <TextBlock Grid.Column="1" Grid.Row="5" Text="Date of birth" FontFamily="Trajan Pro" FontSize="28" Foreground="#FF5E0808"/>
+        <Button x:Name="save_profile" Content="Save changes" Grid.Column="5" Grid.Row="7" Click="save_profile_Click" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF7E0707" FontFamily="Tempus Sans ITC" FontSize="26"/>
+        <TextBox x:Name="text_name" Grid.ColumnSpan="3" Grid.Column="3" Grid.Row="1" Opacity="0.6" Foreground="#FF5E0808" SelectionBrush="{x:Null}" BorderBrush="{x:Null}" FontFamily="Trajan Pro" FontSize="28"/>
+        <PasswordBox x:Name="password_box" Grid.ColumnSpan="3" Grid.Column="3" Grid.Row="3" Opacity="0.6" Foreground="#FF5E0808" SelectionBrush="{x:Null}" BorderBrush="{x:Null}" FontFamily="Trajan Pro" FontSize="28"/>
+        <DatePicker x:Name="birth_date" Grid.ColumnSpan="3" Grid.Column="3" Grid.Row="5" Opacity="0.6" Foreground="#FF5E0808" BorderBrush="{x:Null}" FontFamily="Trajan Pro" FontSize="28"/>
     </Grid>
 </Page>

@@ -29,11 +29,17 @@ namespace MyBookshelf
             repository = _repository;
             user_name.Text = "Hello, " + repository.AuthorisedUser.Name+ "!";
             listbox_read.ItemsSource = repository.GetReadBooks();
+            listbox_recommend.ItemsSource = repository.GetRecommendedBooks();
         }
 
         private void edit_profile_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new EditingProfilePage(repository));
+        }
+
+        private void all_books_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new AllBooksPage(repository));
         }
 
         private void listbox_read_SelectionChanged(object sender, SelectionChangedEventArgs e)

@@ -5,13 +5,14 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:MyBookshelf"
       mc:Ignorable="d" 
-     d:DesignHeight="350" d:DesignWidth="550"
+     d:DesignHeight="500" d:DesignWidth="800"
       Title="InformationAboutBooksPage">
 
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="15*"/>
+            <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="15*"/>
             <ColumnDefinition Width="1*"/>
@@ -33,16 +34,16 @@
             <RowDefinition Height="5*"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
-        <Rectangle Fill="#FFD38377" Grid.ColumnSpan="2" Grid.RowSpan="13" Height="Auto" />
-        <Rectangle Fill="#FFE8C6C8" Grid.RowSpan="13" Height="Auto"  Grid.Column="2" Grid.ColumnSpan="5"/>
-        <TextBlock x:Name="text_author" Grid.Column="3" Grid.Row="1" Text="Author:" Grid.ColumnSpan="3" FontFamily="Trajan Pro" FontSize="20" Foreground="#FF5E0808"/>
-        <TextBlock x:Name="text_booktitle" Grid.Column="3" Grid.Row="3" Text="Title:" Grid.ColumnSpan="3" FontFamily="Trajan Pro" FontSize="18" Foreground="#FF5E0808"/>
-        <TextBlock x:Name="text_genre" Grid.Column="3" Grid.Row="5" Text="Genre:" Grid.ColumnSpan="3" FontFamily="Trajan Pro" FontSize="18" Foreground="#FF5E0808"/>
-        <TextBlock x:Name="text_rating" Grid.Column="3" Grid.Row="7" Text="Rating:" Grid.ColumnSpan="3" FontFamily="Trajan Pro" FontSize="18" Foreground="#FF5E0808"/>
+        <Rectangle Fill="#FFD38377" Grid.ColumnSpan="3" Grid.RowSpan="13" Height="Auto" />
+        <Rectangle Fill="#FFE8C6C8" Grid.RowSpan="13" Height="Auto"  Grid.Column="3" Grid.ColumnSpan="6"/>
+        <TextBlock x:Name="text_author" Grid.Column="4" Grid.Row="1" Text="Author:" Grid.ColumnSpan="3" FontFamily="Trajan Pro" FontSize="24" Foreground="#FF5E0808"/>
+        <TextBlock x:Name="text_booktitle" Grid.Column="4" Grid.Row="3" Text="Title:" Grid.ColumnSpan="3" FontFamily="Trajan Pro" FontSize="20" Foreground="#FF5E0808"/>
+        <TextBlock x:Name="text_genre" Grid.Column="4" Grid.Row="5" Text="Genre:" Grid.ColumnSpan="3" FontFamily="Trajan Pro" FontSize="20" Foreground="#FF5E0808"/>
+        <TextBlock x:Name="text_rating" Grid.Column="4" Grid.Row="7" Text="Rating:" Grid.ColumnSpan="3" FontFamily="Trajan Pro" FontSize="20" Foreground="#FF5E0808"/>
         <Image x:Name="book_image" Grid.Column="1" Grid.Row="1" Grid.RowSpan="7"/>
-        <TextBlock x:Name="book_description" Grid.ColumnSpan="5" Grid.Column="1" Grid.Row="9" FontFamily="Trajan Pro" FontSize="18" Foreground="#FF5E0808" TextWrapping="Wrap"/>
-        <Button x:Name="book_review" Content="Review" Grid.Column="3" Grid.Row="11" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF7E0707" FontFamily="Tempus Sans ITC" FontSize="24" Click="book_review_Click"/>
-        <Button x:Name="button_add" Content="Mark as read" Grid.Column="5" Grid.Row="11" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF7E0707" FontFamily="Tempus Sans ITC" FontSize="24" Visibility="Hidden" Click="button_add_Click"/>
-        <Button x:Name="button_delete" Content="Delete from read" Grid.Column="1" Grid.Row="11" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF7E0707" FontFamily="Tempus Sans ITC" FontSize="22" Visibility="Hidden" Click="button_delete_Click"/>
+        <TextBlock x:Name="book_description" Grid.ColumnSpan="6" Grid.Column="1" Grid.Row="9" FontFamily="Trajan Pro" FontSize="20" Foreground="#FF5E0808"/>
+        <Button x:Name="book_review" Content="Review" Grid.Column="4" Grid.Row="11" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF7E0707" FontFamily="Tempus Sans ITC" FontSize="26" Click="book_review_Click"/>
+        <Button x:Name="button_add" Content="Mark as read" Grid.Column="6" Grid.Row="11" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF7E0707" FontFamily="Tempus Sans ITC" FontSize="26"/>
+        <Button x:Name="button_delete" Content="Delete from read" Grid.Column="1" Grid.Row="11" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF7E0707" FontFamily="Tempus Sans ITC" FontSize="26" Click="button_delete_Click"/>
     </Grid>
 </Page>
