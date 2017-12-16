@@ -35,6 +35,10 @@ namespace MyBookshelf
         {
             NavigationService.Navigate(new EditingProfilePage(repository));
         }
-        
+
+        private void listbox_read_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            NavigationService.Navigate(new InformationAboutBooksPage(listbox_read.SelectedItem as Book, repository));
+        }
     }
 }

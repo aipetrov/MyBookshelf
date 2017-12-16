@@ -34,7 +34,7 @@
         <TextBlock Grid.Column="1" Grid.Row="7" Text="Recommended books" FontFamily="Trajan Pro" FontSize="11" Foreground="#FF5E0808" VerticalAlignment="Center"/>
         <Button x:Name="edit_profile" Content="Edit profile" Grid.Row="3" Grid.Column="1" Click="edit_profile_Click" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF7E0707" FontFamily="Tempus Sans ITC" FontSize="16" HorizontalContentAlignment="Left"/>
 
-        <ListBox x:Name="listbox_read" HorizontalAlignment="Left" Width="342" Grid.ColumnSpan="3" Grid.Column="3" Grid.Row="5" >
+        <ListBox x:Name="listbox_read" HorizontalAlignment="Left" Width="342" Grid.ColumnSpan="3" Grid.Column="3" Grid.Row="5" SelectionChanged="listbox_read_SelectionChanged">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid Background="Azure" Grid.Column="3" Grid.Row="5" MinWidth="320">

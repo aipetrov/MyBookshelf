@@ -67,7 +67,7 @@ namespace MyBookshelf
 
         private void write_review_DataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
-            if (write_review.Text!="")
+            if (!string.IsNullOrWhiteSpace(write_review.Text))
             {
                 send_review.IsEnabled = true;
             }

@@ -14,6 +14,7 @@ namespace MyBookshelfData
         {
             Context context = new Context();
             var authorisedUser = context.Users.FirstOrDefault(x => x.Login == login && x.Password == password);
+            context.Dispose();
             if (authorisedUser != null)
             {
                 AuthorisedUser = authorisedUser as User;
@@ -23,6 +24,7 @@ namespace MyBookshelfData
             {
                 return false;
             }
+           
         }
 
         public bool UserExists(string login)
@@ -30,7 +32,7 @@ namespace MyBookshelfData
             Context context = new Context();
 
             var user = context.Users.FirstOrDefault(u => u.Login == login);
-                                
+            context.Dispose();
             if (user != null)
             {
                 return true;
@@ -46,43 +48,49 @@ namespace MyBookshelfData
             Context context = new Context();
             var users = context.Users.Add(new User { Login = login, Password = password, Name = name, Birth = birth });
             context.SaveChanges();
+            context.Dispose();
         }
 
         public List<Book> GetBooks()
         {
             Context context = new Context();
-            var books = context.Books.ToList();            
-            return books;
+            var books = context.Books.ToList();
+            context.Dispose();       
+            return books;            
         }
 
         public List<Book> GetReadBooks()
         {
             Context context = new Context();
             var readBooks = context.Books.Where(x => x.Readers.FirstOrDefault(k => k.Id==AuthorisedUser.Id)!=null).ToList();
-            return readBooks;
+            context.Dispose();
+            return readBooks;            
         }
 
         public void MarkBookAsRead(Book book)
         {
             Context context = new Context();
             var user = context.Users.FirstOrDefault(x => x.Id == AuthorisedUser.Id);
-            user.ReadBooks.Add(book);
+            context.Books.Include("Readers").FirstOrDefault(x => x.Id == book.Id).Readers.Add(user);
             context.SaveChanges();
+            context.Dispose();
         }
 
         public void DeleteBookFromRead(Book book)
         {
             Context context = new Context();
             var user = context.Users.FirstOrDefault(x => x.Id == AuthorisedUser.Id);
-            user.ReadBooks.Remove(book);
+            context.Books.Include("Readers").FirstOrDefault(x => x.Id == book.Id).Readers.Remove(user);
             context.SaveChanges();
+            context.Dispose();
         }
 
         public bool BookIsRead(Book book)
         {
             Context context = new Context();
-            var user = context.Users.FirstOrDefault(x => x.Id == AuthorisedUser.Id);
-            if (user.ReadBooks.FirstOrDefault(x => x.Id == book.Id) != null)
+            var reader = context.Books.Where(x => x.Readers.Contains(AuthorisedUser));
+            context.Dispose();
+            if (reader != null)
             {
                 return true;
             }
@@ -90,6 +98,8 @@ namespace MyBookshelfData
             {
                 return false;
             }
+
+
         }
 
         public void AddNewReview(Book book, int rating, string comment)
@@ -98,6 +108,7 @@ namespace MyBookshelfData
             var reviews = context.Reviews.ToList();
             reviews.Add(new Review { User = AuthorisedUser, Book = book, Comment = comment, Rating = rating, DateTime = DateTime.Now });
             context.SaveChanges();
+            context.Dispose();
         }
 
         public void DeleteReview(Review review)
@@ -106,6 +117,7 @@ namespace MyBookshelfData
             var reviews = context.Reviews.ToList();
             reviews.Remove(review);
             context.SaveChanges();
+            context.Dispose();
         }
 
         public void EditReview(Review review, int rating, string comment)
@@ -115,12 +127,14 @@ namespace MyBookshelfData
             foundReview.Rating = rating;
             foundReview.Comment = comment;
             context.SaveChanges();
+            context.Dispose();
         }
 
         public bool ReviewIsYours(Review review)
         {
             Context context = new Context();
             var reviews = context.Reviews.Where(x => x.User == AuthorisedUser);
+            context.Dispose();
             if (reviews.FirstOrDefault(x => x.Id == review.Id) != null)
             {
                 return true;
@@ -134,7 +148,8 @@ namespace MyBookshelfData
         public double CalculateRating(Book book)
         {
             Context context = new Context();
-            var reviews = context.Reviews.Where(x => x.Book == book);
+            var reviews = context.Reviews.Where(x => x.Book.Id == book.Id).ToList();
+            context.Dispose();
             int sumOfRatings = 0;
             int k = 0;
             foreach (var rev in reviews)
@@ -143,9 +158,13 @@ namespace MyBookshelfData
                 k++;
             }
 
-            double rating = sumOfRatings / k;
+            double rating = 0;
+
+            if (k > 0)
+            { rating = sumOfRatings / k; }
 
             return Math.Round(rating, 2);
+
         }       
 
         public void EditProfile(string name, string password, DateTime birth)
@@ -157,12 +176,14 @@ namespace MyBookshelfData
             user.Birth = birth;
             AuthorisedUser = user;
             context.SaveChanges();
+            context.Dispose();
         }
 
         public List<Book> GetRecommendedBooks()
         {
             Context context = new Context();
             var booksOfUser = context.Books.Where(x => x.Readers.FirstOrDefault(z => z.Id == AuthorisedUser.Id)!=null);
+            context.Dispose();
             var recommendedBooks = new List<Book>();
             foreach (var book in booksOfUser)
             {
@@ -181,7 +202,8 @@ namespace MyBookshelfData
         public List<Review> GetReviews(Book book)
         {
             Context context = new Context();
-            var reviews = context.Reviews.Where(x => x.Book == book).ToList();
+            var reviews = context.Reviews.Where(x => x.Book.Id == book.Id).ToList();
+            context.Dispose();
             return reviews;
         }
 
@@ -189,6 +211,7 @@ namespace MyBookshelfData
         {
             Context context = new Context();
             var foundReview = context.Reviews.FirstOrDefault(x => x.Id == review.Id);
+            context.Dispose();
             return foundReview.Comment;
         }
 
@@ -196,6 +219,7 @@ namespace MyBookshelfData
         {
             Context context = new Context();
             var foundReview = context.Reviews.FirstOrDefault(x => x.Id == review.Id);
+            context.Dispose();
             return foundReview.Rating;
         }
     }
