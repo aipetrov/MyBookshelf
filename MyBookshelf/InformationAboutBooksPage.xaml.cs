@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MyBookshelfData;
 
 namespace MyBookshelf
 {
@@ -20,9 +21,24 @@ namespace MyBookshelf
     /// </summary>
     public partial class InformationAboutBooksPage : Page
     {
-        public InformationAboutBooksPage()
+        Book book;
+        Repository repository = new Repository();
+
+        public InformationAboutBooksPage(Book _book, Repository _repository)
         {
             InitializeComponent();
+            book = _book;
+            repository = _repository;
+        }
+
+        private void button_delete_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void book_review_Click(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }

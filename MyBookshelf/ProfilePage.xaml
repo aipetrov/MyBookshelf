@@ -64,7 +64,7 @@
             <TextBlock Text="{Binding Title}" Grid.Column="3" Grid.Row="1" Grid.ColumnSpan="3" FontSize="12" FontFamily="Blogger Sans" Foreground="#FF5E0808"/>
             <TextBlock Text="{Binding Author}" Grid.Column="3" Grid.ColumnSpan="3" Grid.Row="3" FontSize="10" FontFamily="Blogger Sans" Foreground="#FF5E0808"/>
             <TextBlock Text="{Binding Genre}" Grid.Column="3" Grid.ColumnSpan="3" Grid.Row="5" FontSize="10" FontFamily="Blogger Sans" Foreground="#FF5E0808"/>
-                        <TextBlock Text="{Binding Description}"  TextWrapping="Wrap" Grid.Column="3" Grid.Row="7" Grid.ColumnSpan="3" FontSize="10" FontFamily="Blogger Sans" Foreground="#FF5E0808" FontStyle="Italic"/>
+            <TextBlock Text="{Binding Description}"  TextWrapping="Wrap" Grid.Column="3" Grid.Row="7" Grid.ColumnSpan="3" FontSize="10" FontFamily="Blogger Sans" Foreground="#FF5E0808" FontStyle="Italic"/>
                     </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>
@@ -73,7 +73,7 @@
         <ListBox x:Name="listbox_recommend" Grid.Column="3" Grid.Row="7" Grid.ColumnSpan="3" Background="{x:Null}" BorderBrush="{x:Null}"  >
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <Grid Background="#FFEDE7F2" Grid.Column="3" Grid.Row="7" MinWidth="478" MaxWidth="200">
+                    <Grid Background="#FFEDE7F2" Grid.Column="3" Grid.Row="7" Grid.ColumnSpan="3" MinWidth="480" MaxWidth="250">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="1*"/>
                             <ColumnDefinition Width="6*"/>
@@ -95,11 +95,10 @@
                             <RowDefinition Height="1*"/>
                         </Grid.RowDefinitions>
                         <Image Source="{Binding ImagePath}" Grid.Row="1" Grid.RowSpan="7" Grid.Column="1"/>
-                        <TextBlock Text="{Binding Title}" Grid.Row="1" Grid.Column="3" FontSize="16" FontFamily="Blogger Sans" Foreground="#FF5E0808"/>
-                        <TextBlock Text="{Binding Author}" Grid.Row="3" Grid.Column="3" FontFamily="Blogger Sans" FontSize="13" Foreground="#FF5E0808"/>
-                        <TextBlock Text="{Binding Genre}" Grid.Row="5" Grid.Column="3" FontFamily="Blogger Sans" FontSize="13" Foreground="#FF5E0808"/>
-                        <TextBlock Text="{Binding Rating}" Grid.Row="1" Grid.Column="5" FontFamily="Blogger Sans" FontSize="13" Foreground="#FF5E0808"/>
-                        <TextBlock Text="{Binding Description}" Grid.Row="7" Grid.Column="3" Grid.ColumnSpan="3" FontStyle="Italic" FontFamily="Blogger Sans" FontSize="13" Opacity="0.7" Foreground="#FFD38377"/>
+                        <TextBlock Text="{Binding Title}" Grid.Row="1" Grid.Column="3" FontSize="12" FontFamily="Blogger Sans" Foreground="#FF5E0808"/>
+                        <TextBlock Text="{Binding Author}" Grid.Row="3" Grid.Column="3" FontSize="10" FontFamily="Blogger Sans" Foreground="#FF5E0808"/>
+                        <TextBlock Text="{Binding Genre}" Grid.Row="5" Grid.Column="3" FontSize="10" FontFamily="Blogger Sans" Foreground="#FF5E0808"/>
+                        <TextBlock Text="{Binding Description}" TextWrapping="Wrap" Grid.Row="7" Grid.Column="3" Grid.ColumnSpan="3" FontStyle="Italic" FontSize="10" FontFamily="Blogger Sans" Foreground="#FF5E0808" Opacity="0.7"/>
                     </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>
