@@ -79,7 +79,10 @@ namespace MyBookshelfData
         public List<Book> GetReadBooks()
         {
             Context context = new Context();
-            var readBooks = context.Books.Include("Readers").Where(x => x.Readers.FirstOrDefault(k => k.Id==AuthorisedUser.Id)!=null).ToList();
+            var readBooks = context.Books.Include("Readers").Where(x => x.Readers.FirstOrDefault(k => k.Id == AuthorisedUser.Id) != null).ToList();
+            //var readBooks = (from p in context.UserBooks
+            //                where p.User.Id == AuthorisedUser.Id
+            //                select p.Book).ToList();
             context.Dispose();
             return readBooks;            
         }
