@@ -60,7 +60,7 @@
                     <RowDefinition Height="8*"/>
                     <RowDefinition Height="1*"/>
                 </Grid.RowDefinitions>
-            <Image Source="{Binding ImagePath}" Grid.Row="1" Grid.RowSpan="7" Grid.Column="1"/>
+            <Image Source="{Binding ImagePath}" Height="130" Width="130" Grid.Row="1" Grid.RowSpan="7" Grid.Column="1"/>
             <TextBlock Text="{Binding Title}" Grid.Column="3" Grid.Row="1" Grid.ColumnSpan="3" FontSize="12" FontFamily="Blogger Sans" Foreground="#FF5E0808"/>
             <TextBlock Text="{Binding Author}" Grid.Column="3" Grid.ColumnSpan="3" Grid.Row="3" FontSize="10" FontFamily="Blogger Sans" Foreground="#FF5E0808"/>
             <TextBlock Text="{Binding Genre}" Grid.Column="3" Grid.ColumnSpan="3" Grid.Row="5" FontSize="10" FontFamily="Blogger Sans" Foreground="#FF5E0808"/>
@@ -94,7 +94,7 @@
                             <RowDefinition Height="8*"/>
                             <RowDefinition Height="1*"/>
                         </Grid.RowDefinitions>
-                        <Image Source="{Binding ImagePath}" Grid.Row="1" Grid.RowSpan="7" Grid.Column="1"/>
+                        <Image Source="{Binding ImagePath}" Height="130" Width="130" Grid.Row="1" Grid.RowSpan="7" Grid.Column="1"/>
                         <TextBlock Text="{Binding Title}" Grid.Column="3" Grid.Row="1" Grid.ColumnSpan="3" FontSize="12" FontFamily="Blogger Sans" Foreground="#FF5E0808"/>
                         <TextBlock Text="{Binding Author}" Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="3" FontSize="10" FontFamily="Blogger Sans" Foreground="#FF5E0808"/>
                         <TextBlock Text="{Binding Genre}" Grid.Row="5" Grid.Column="3" Grid.ColumnSpan="3" FontSize="10" FontFamily="Blogger Sans" Foreground="#FF5E0808"/>
