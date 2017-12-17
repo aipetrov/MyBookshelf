@@ -70,5 +70,11 @@ namespace MyBookshelf
             ShowRecommendBooks(repository.GetRecommendedBooks());
             ShowReadBooks(repository.GetReadBooks());
         }
+
+        private void listbox_recommend_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            repository.ListBookUpdated += ShowReadBooks;
+            NavigationService.Navigate(new InformationAboutBooksPage(listbox_recommend.SelectedItem as Book, repository));
+        }
     }
 }
