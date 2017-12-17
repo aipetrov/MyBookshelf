@@ -70,7 +70,7 @@
             </ListBox.ItemTemplate>
         </ListBox>
 
-        <ListBox x:Name="listbox_recommend" Grid.Column="3" Grid.Row="7" Grid.ColumnSpan="3" Background="{x:Null}" BorderBrush="{x:Null}"  SelectionChanged="listbox_read_SelectionChanged">
+        <ListBox x:Name="listbox_recommend" Grid.Column="3" Grid.Row="7" Grid.ColumnSpan="3" Background="{x:Null}" BorderBrush="{x:Null}"  SelectionChanged="listbox_recommend_SelectionChanged">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid Background="#FFEDE7F2" Grid.Column="3" Grid.Row="7" Grid.ColumnSpan="3" MinWidth="480" MaxWidth="250">

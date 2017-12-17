@@ -15,6 +15,8 @@ namespace MyBookshelfData
 
         public DbSet<Review> Reviews { get; set; }
 
+        public DbSet<ReadBook> UserBooks { get; set; }
+
         public Context() : base("MyBookshelfDataBase")
         {
 

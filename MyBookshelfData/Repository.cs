@@ -79,7 +79,7 @@ namespace MyBookshelfData
         public List<Book> GetReadBooks()
         {
             Context context = new Context();
-            var readBooks = context.Books.Where(x => x.Readers.FirstOrDefault(k => k.Id==AuthorisedUser.Id)!=null).ToList();
+            var readBooks = context.Books.Include("Readers").Where(x => x.Readers.FirstOrDefault(k => k.Id==AuthorisedUser.Id)!=null).ToList();
             context.Dispose();
             return readBooks;            
         }
@@ -210,8 +210,8 @@ namespace MyBookshelfData
             var recommendedBooks = new List<Book>();
             foreach (var book in booksOfUser)
             {
-                var similarBooks = context.Books.Where(x => x.Genre == book.Genre || x.Author == book.Author).ToList();
-                foreach (var similarBook in similarBooks)
+                var similarBooks = context.Books.Where(x => x.Genre == book.Genre || x.Author == book.Author).Except(booksOfUser).ToList();
+                foreach (var similarBook in similarBooks)  
                 {
                     recommendedBooks.Add(similarBook);
                 }
@@ -246,6 +246,14 @@ namespace MyBookshelfData
             return foundReview.Rating;
         }
 
+        public string GetAuthor()
+        {
+            Context context = new Context();
+            var foundBook = context.Books.FirstOrDefault(x => x.Id == book.Id);
+            context.Dispose();
+            return foundBook.Author;
+        }
+
         public string GetAuthor(Book book)
         {
             Context context = new Context();
@@ -254,7 +262,7 @@ namespace MyBookshelfData
             return foundBook.Author;
         }
 
-        public string GetTitle(Book book)
+        public string GetTitle()
         {
             Context context = new Context();
             var foundBook = context.Books.FirstOrDefault(x => x.Id == book.Id);
@@ -262,7 +270,7 @@ namespace MyBookshelfData
             return foundBook.Title;
         }
 
-        public string GetGenre(Book book)
+        public string GetGenre()
         {
             Context context = new Context();
             var foundBook = context.Books.FirstOrDefault(x => x.Id == book.Id);
@@ -270,7 +278,7 @@ namespace MyBookshelfData
             return foundBook.Genre;
         }
 
-        public string GetImagePath(Book book)
+        public string GetImagePath()
         {
             Context context = new Context();
             var foundBook = context.Books.FirstOrDefault(x => x.Id == book.Id);
@@ -278,7 +286,7 @@ namespace MyBookshelfData
             return foundBook.ImagePath;
         }
 
-        public string GetDescription(Book book)
+        public string GetDescription()
         {
             Context context = new Context();
             var foundBook = context.Books.FirstOrDefault(x => x.Id == book.Id);
@@ -286,7 +294,7 @@ namespace MyBookshelfData
             return foundBook.Description;
         }
 
-        public Book GetBook(Book book)
+        public Book GetBook()
         {
             Context context = new Context();
             var foundBook = context.Books.FirstOrDefault(x => x.Id == book.Id);

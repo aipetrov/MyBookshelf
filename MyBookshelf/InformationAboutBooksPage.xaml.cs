@@ -29,12 +29,12 @@ namespace MyBookshelf
             InitializeComponent();
             book = _book;
             repository = _repository;
-            text_author.Text = "Author: " + repository.GetAuthor(book);
-            text_booktitle.Text = "Title: " + repository.GetTitle(book);
-            text_genre.Text = "Genre: " + repository.GetGenre(book);
-            text_rating.Text = "Rating: " + repository.CalculateRating(book);
-            book_image.DataContext = repository.GetImagePath(book);
-            book_description.Text=repository.GetDescription(book);
+            Repository r = new Repository(book, repository.AuthorisedUser);
+            text_author.Text = "Author: " + r.GetAuthor();
+            text_booktitle.Text = "Title: " + r.GetTitle();
+            text_genre.Text = "Genre: " + r.GetGenre();
+            text_rating.Text = "Rating: " + r.CalculateRating(book);
+            book_description.Text=r.GetDescription();
 
             if (repository.BookIsRead(book))
             {

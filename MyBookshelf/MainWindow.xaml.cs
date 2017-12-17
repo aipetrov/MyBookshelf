@@ -1,4 +1,5 @@
 ﻿using MyBookshelfData;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,6 +24,15 @@ namespace MyBookshelf
         public MainWindow()
         {
             InitializeComponent();
+
+            //Context context = new Context();
+            //var books = context.Books.Include("Readers").ToList();
+
+            //foreach (var book in books)
+            //{
+            //    var jsonBook = JsonConvert.SerializeObject(book);
+            //    MessageBox.Show(jsonBook);
+            //}
         }
     }
 }
