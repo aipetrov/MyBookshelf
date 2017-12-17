@@ -68,5 +68,10 @@ namespace MyBookshelf
             button_delete.Visibility = Visibility.Visible;
             button_add.Visibility = Visibility.Hidden;
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            repository.Browse(repository.GetAuthor(book.Id));
+        }
     }
 }

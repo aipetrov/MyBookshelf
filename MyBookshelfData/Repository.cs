@@ -1,8 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WikipediaNET;
+using WikipediaNET.Enums;
+using WikipediaNET.Objects;
 
 namespace MyBookshelfData
 {
@@ -270,6 +274,16 @@ namespace MyBookshelfData
             var foundBook = context.Books.FirstOrDefault(x => x.Id == book.Id);
             context.Dispose();
             return foundBook.Description;
+        }
+        
+        public void Browse(string authorName)
+        {
+            Wikipedia wikipedia = new Wikipedia();
+            wikipedia.UseTLS = true;
+            wikipedia.Limit = 1;
+            wikipedia.What = What.Title;           
+            QueryResult results = wikipedia.Search(authorName);
+            Process.Start(results.Search[0].Url.ToString());
         }
     }
 }
