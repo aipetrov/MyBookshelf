@@ -19,34 +19,43 @@ namespace MyBookshelfData.Migrations
 
         protected override void Seed(MyBookshelfData.Context context)
         {
-            //  This method will be called after migrating to the latest version.
+            try
+            {
+                //context.Database.ExecuteSqlCommand("DBCC CHECKIDENT('Books', RESEED , 0);");
+                //context.Database.ExecuteSqlCommand("DBCC CHEKIDENT('Reviews', RESEED , 0);");
+                //context.Database.ExecuteSqlCommand("DBCC CHEKIDENT('Users', RESEED , 0);");
 
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data.
+                context.Books.RemoveRange(context.Books);
+                context.Reviews.RemoveRange(context.Reviews);
+                context.Users.RemoveRange(context.Users);
+                context.UserBooks.RemoveRange(context.UserBooks);
+                context.SaveChanges();
 
-            /*context.Database.ExecuteSqlCommand("DBCC CHECKIDENT('Books', RESEED , 0);");
-            context.Database.ExecuteSqlCommand("DBCC CHEKIDENT('Reviews' , RESEED , 0);");
-            context.Database.ExecuteSqlCommand("DBCC CHEKIDENT('Users' , RESEED , 0);");
+                string BooksJson = File.ReadAllText(@"C:\Users\Влада\Desktop\MyBookshelf-master (1)\MyBookshelf-master\books.json");
+                var BooksToAdd = JsonConvert.DeserializeObject<List<Book>>(BooksJson);
+                BooksToAdd.ForEach(item => context.Books.Add(item));
+                context.SaveChanges();
 
-            context.Books.RemoveRange(context.Books);
-            context.Reviews.RemoveRange(context.Reviews);
-            context.Users.RemoveRange(context.Users);            
-            context.SaveChanges();
+                string ReviewsJson = File.ReadAllText(@"C:\Users\Влада\Desktop\MyBookshelf-master (1)\MyBookshelf-master\reviews.json");
+                var ReviewsToAdd = JsonConvert.DeserializeObject<List<Review>>(ReviewsJson);
+                ReviewsToAdd.ForEach(item => context.Reviews.Add(item));
+                context.SaveChanges();
 
-            string BooksJson = File.ReadAllText("Books.json");
-            var BooksToAdd = JsonConvert.DeserializeObject<List<Book>>(BooksJson);
-            context.SaveChanges();
+                string UsersJson = File.ReadAllText(@"C:\Users\Влада\Desktop\MyBookshelf-master (1)\MyBookshelf-master\users.json");
+                var UsersToAdd = JsonConvert.DeserializeObject<List<User>>(UsersJson);
+                UsersToAdd.ForEach(item => context.Users.Add(item));
+                context.SaveChanges();
 
-            string ReviewsJson = File.ReadAllText("Reviews.json");
-            var ReviewsToAdd = JsonConvert.DeserializeObject<List<Review>>(ReviewsJson);
-            context.SaveChanges();
-
-            string UsersJson = File.ReadAllText("Users.json");
-            var UsersToAdd = JsonConvert.DeserializeObject<List<User>>(UsersJson);
-            context.SaveChanges();
-
-            string UserBooksJson = File.ReadAllText("UserBooks.json");
-            var UserBooksToAdd = JsonConvert.DeserializeObject<List<ReadBooks>>(UserBooks);*/
+                string UserBooksJson = File.ReadAllText(@"C:\Users\Влада\Desktop\MyBookshelf-master (1)\MyBookshelf-master\userbooks.json");
+                var UserBooksToAdd = JsonConvert.DeserializeObject<List<ReadBook>>(UserBooksJson);
+                UserBooksToAdd.ForEach(item => context.UserBooks.Add(item));
+                context.SaveChanges();
+            }
+            catch(Exception er)
+            {
+                File.WriteAllText(@"C:\Users\Влада\Desktop\MyBookshelf-master (1)\MyBookshelf-master\error.txt", JsonConvert.SerializeObject(er));
+                throw er;
+            }
         }
     }
 }
