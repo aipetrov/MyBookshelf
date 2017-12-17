@@ -19,43 +19,11 @@ namespace MyBookshelfData.Migrations
 
         protected override void Seed(MyBookshelfData.Context context)
         {
-            /*try
-            {
-                context.Database.ExecuteSqlCommand("DBCC CHECKIDENT('Books', RESEED , 0);");
-                context.Database.ExecuteSqlCommand("DBCC CHEKIDENT('Reviews', RESEED , 0);");
-                context.Database.ExecuteSqlCommand("DBCC CHEKIDENT('Users', RESEED , 0);");
+            
 
-                context.Books.RemoveRange(context.Books);
-                context.Reviews.RemoveRange(context.Reviews);
-                context.Users.RemoveRange(context.Users);
-                context.UserBooks.RemoveRange(context.UserBooks);
-                context.SaveChanges();
+                
 
-                string BooksJson = File.ReadAllText(@"C:\Users\¬Î‡‰‡\Desktop\MyBookshelf-master (1)\MyBookshelf-master\books.json");
-                var BooksToAdd = JsonConvert.DeserializeObject<List<Book>>(BooksJson);
-                BooksToAdd.ForEach(item => context.Books.Add(item));
-                context.SaveChanges();
-
-                string ReviewsJson = File.ReadAllText(@"C:\Users\¬Î‡‰‡\Desktop\MyBookshelf-master (1)\MyBookshelf-master\reviews.json");
-                var ReviewsToAdd = JsonConvert.DeserializeObject<List<Review>>(ReviewsJson);
-                ReviewsToAdd.ForEach(item => context.Reviews.Add(item));
-                context.SaveChanges();
-
-                string UsersJson = File.ReadAllText(@"C:\Users\¬Î‡‰‡\Desktop\MyBookshelf-master (1)\MyBookshelf-master\users.json");
-                var UsersToAdd = JsonConvert.DeserializeObject<List<User>>(UsersJson);
-                UsersToAdd.ForEach(item => context.Users.Add(item));
-                context.SaveChanges();
-
-                string UserBooksJson = File.ReadAllText(@"C:\Users\¬Î‡‰‡\Desktop\MyBookshelf-master (1)\MyBookshelf-master\userbooks.json");
-                var UserBooksToAdd = JsonConvert.DeserializeObject<List<ReadBook>>(UserBooksJson);
-                UserBooksToAdd.ForEach(item => context.UserBooks.Add(item));
-                context.SaveChanges();
-            }
-            catch(Exception er)
-            {
-                File.WriteAllText(@"C:\Users\¬Î‡‰‡\Desktop\MyBookshelf-master (1)\MyBookshelf-master\error.txt", JsonConvert.SerializeObject(er));
-                throw er;
-            }*/
+            
 
             var user1 = new User { Login = "vvkokovkina", Password = "qweasd", Name = "Vlada", Birth = new DateTime(1998, 08, 01) }; context.Users.Add(user1);
             var user2 = new User { Login = "aipetrov", Password = "zxc", Name = "Andrew", Birth = new DateTime(1999, 03, 03) }; context.Users.Add(user2);
@@ -65,7 +33,42 @@ namespace MyBookshelfData.Migrations
             var user6 = new User { Login = "borya1999", Password = "1999", Name = "Borechka", Birth = new DateTime(1999, 08, 04) }; context.Users.Add(user6);
             var user7 = new User { Login = "vladhello", Password = "hello", Name = "Vlad", Birth = new DateTime(1994, 07, 21) }; context.Users.Add(user7);
             var user8 = new User { Login = "krasotka", Password = "12k", Name = "Princess", Birth = new DateTime(1993, 04, 19) }; context.Users.Add(user8);
-            context.SaveChanges();
+            
+            //var userbook1 = new ReadBook { User = user1, Book = book1 }; context.UserBooks.Add(userbook1);
+            //var userbook2 = new ReadBook { User = user1, Book = book5 }; context.UserBooks.Add(userbook2);
+            //var userbook3 = new ReadBook { User = user2, Book = book3 }; context.UserBooks.Add(userbook3);
+            //var userbook4 = new ReadBook { User = user1, Book = book10 }; context.UserBooks.Add(userbook4);
+            //var userbook5 = new ReadBook { User = user2, Book = book26 }; context.UserBooks.Add(userbook5);
+            //var userbook6 = new ReadBook { User = user2, Book = book30 }; context.UserBooks.Add(userbook6);
+            //var userbook7 = new ReadBook { User = user3, Book = book11 }; context.UserBooks.Add(userbook7);
+            //var userbook8 = new ReadBook { User = user3, Book = book15 }; context.UserBooks.Add(userbook8);
+            //var userbook9 = new ReadBook { User = user3, Book = book27 }; context.UserBooks.Add(userbook9);
+            //var userbook10 = new ReadBook { User = user4, Book = book1 }; context.UserBooks.Add(userbook10);
+            //var userbook11 = new ReadBook { User = user4, Book = book17 }; context.UserBooks.Add(userbook11);
+            //var userbook12 = new ReadBook { User = user5, Book = book5 }; context.UserBooks.Add(userbook12);
+            //var userbook13 = new ReadBook { User = user5, Book = book4 }; context.UserBooks.Add(userbook13);
+            //var userbook14 = new ReadBook { User = user5, Book = book19 }; context.UserBooks.Add(userbook14);
+            //var userbook15 = new ReadBook { User = user5, Book = book29 }; context.UserBooks.Add(userbook15);
+            //var userbook16 = new ReadBook { User = user6, Book = book31 }; context.UserBooks.Add(userbook16);
+            //var userbook17 = new ReadBook { User = user6, Book = book24 }; context.UserBooks.Add(userbook17);
+            //var userbook18 = new ReadBook { User = user6, Book = book28 }; context.UserBooks.Add(userbook18);
+            //var userbook19 = new ReadBook { User = user7, Book = book17 }; context.UserBooks.Add(userbook19);
+            //var userbook20 = new ReadBook { User = user7, Book = book7 }; context.UserBooks.Add(userbook20);
+            //var userbook21 = new ReadBook { User = user7, Book = book6 }; context.UserBooks.Add(userbook21);
+            //var userbook22 = new ReadBook { User = user7, Book = book15 }; context.UserBooks.Add(userbook22);
+            //var userbook23 = new ReadBook { User = user8, Book = book26 }; context.UserBooks.Add(userbook23);
+            //var userbook24 = new ReadBook { User = user8, Book = book10 }; context.UserBooks.Add(userbook24);
+            //var userbook25 = new ReadBook { User = user8, Book = book14 }; context.UserBooks.Add(userbook25);
+            //var userbook26 = new ReadBook { User = user4, Book = book26 }; context.UserBooks.Add(userbook26);
+            //var userbook27 = new ReadBook { User = user6, Book = book3 }; context.UserBooks.Add(userbook27);
+            //var userbook28 = new ReadBook { User = user7, Book = book1 }; context.UserBooks.Add(userbook28);
+            //var userbook29 = new ReadBook { User = user4, Book = book30 }; context.UserBooks.Add(userbook29);
+            //var userbook30 = new ReadBook { User = user2, Book = book14 }; context.UserBooks.Add(userbook30);
+
+
+            
+
+          
 
             var book1 = new Book { Title = "The Picture of Dorian Grey", Author = "Wilde Oscar", Genre = "Philosophical novel", Description = "In the stately London home of his aunt, Lady Brandon, the well-known artist Basil Hallward meets Dorian Gray. Dorian is a cultured, wealthy, and impossibly beautiful young man who immediately captures Basilís artistic imagination. Dorian sits for several portraits, and Basil often depicts him as an ancient Greek hero or a mythological figure. When the novel opens, the artist is completing his first portrait of Dorian as he truly is, but, as he admits to his friend Lord Henry Wotton, the painting disappoints him", ImagePath = "Portret_Doriana_Greya.jpg" }; context.Books.Add(book1);
             var book2 = new Book { Title = "The Tradegy of Romeo and Juliet", Author = "William Shakespeare", Genre = "Tragedy", Description = "In the streets of Verona another brawl breaks out between the servants of the feuding noble families of Capulet and Montague. Benvolio, a Montague, tries to stop the fighting, but is himself embroiled when the rash Capulet, Tybalt, arrives on the scene. After citizens outraged by the constant violence beat back the warring factions, Prince Escalus, the ruler of Verona, attempts to prevent any further conflicts between the families by decreeing death for any individual who disturbs the peace in the future.", ImagePath = "Romeo_And_Julietta.jpg" }; context.Books.Add(book2);
