@@ -23,15 +23,13 @@ namespace MyBookshelf
     {
         Repository repository;
         Book book;
-        int bookID;
 
         public InformationAboutBooksPage(Book _book, Repository _repository)
         {
             InitializeComponent();
             book = _book;
             repository = _repository;
-            bookID = book.Id;
-            text_author.Text = "Author: " + repository.GetAuthor(bookID);
+            text_author.Text = "Author: " + repository.GetAuthor(book);
             text_booktitle.Text = "Title: " + repository.GetTitle(book);
             text_genre.Text = "Genre: " + repository.GetGenre(book);
             text_rating.Text = "Rating: " + repository.CalculateRating(book);
@@ -57,21 +55,23 @@ namespace MyBookshelf
 
         private void button_delete_Click(object sender, RoutedEventArgs e)
         {
-            repository.DeleteBookFromRead(book);
+            Repository r = new Repository(book, repository.AuthorisedUser);
+            r.DeleteBookFromRead();
             button_add.Visibility = Visibility.Visible;
             button_delete.Visibility = Visibility.Hidden;
         }
 
         private void button_add_Click(object sender, RoutedEventArgs e)
         {
-            repository.MarkBookAsRead(book);
+            Repository r = new Repository(book, repository.AuthorisedUser);
+            r.MarkBookAsRead();
             button_delete.Visibility = Visibility.Visible;
             button_add.Visibility = Visibility.Hidden;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            repository.Browse(repository.GetAuthor(book.Id));
+            repository.Browse(repository.GetAuthor(book));
         }
     }
 }
