@@ -15,6 +15,19 @@ namespace MyBookshelfData
 
         public Action<List<Book>> ListBookUpdated;
 
+        Book book;
+
+        public Repository()
+        {
+
+        }
+
+        public Repository(Book _book, User user)
+        {
+            book = _book;
+            AuthorisedUser = user;
+        }
+
         public bool SignedIn(string login, string password)
         {
             Context context = new Context();
@@ -71,7 +84,7 @@ namespace MyBookshelfData
             return readBooks;            
         }
 
-        public void MarkBookAsRead(Book book)
+        public void MarkBookAsRead()
         {
             Context context = new Context();
             var user = context.Users.FirstOrDefault(x => x.Id == AuthorisedUser.Id);
@@ -82,7 +95,7 @@ namespace MyBookshelfData
             context.Dispose();            
         }
 
-        public void DeleteBookFromRead(Book book)
+        public void DeleteBookFromRead()
         {
             Context context = new Context();
             var user = context.Users.FirstOrDefault(x => x.Id == AuthorisedUser.Id);
@@ -233,10 +246,10 @@ namespace MyBookshelfData
             return foundReview.Rating;
         }
 
-        public string GetAuthor(int bookID)
+        public string GetAuthor(Book book)
         {
             Context context = new Context();
-            var foundBook = context.Books.FirstOrDefault(x => x.Id == 1);
+            var foundBook = context.Books.FirstOrDefault(x => x.Id == book.Id);
             context.Dispose();
             return foundBook.Author;
         }
@@ -273,13 +286,20 @@ namespace MyBookshelfData
             return foundBook.Description;
         }
 
+        public Book GetBook(Book book)
+        {
+            Context context = new Context();
+            var foundBook = context.Books.FirstOrDefault(x => x.Id == book.Id);
+            context.Dispose();
+            return foundBook;
+        }
+
         GoogleService googleService = new GoogleService();
 
         public async void Browse(string authorName)
         {
             var results = await googleService.GetResults(authorName);
             Process.Start(results[0].Url);
-
         }
     }
 }
