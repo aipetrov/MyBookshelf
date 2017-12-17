@@ -23,7 +23,7 @@
         <ListBox x:Name="all_books" Grid.Column="1" Grid.Row="1" Background="#FFEDE7F2" BorderBrush="{x:Null}" SelectionChanged="all_books_SelectionChanged">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <Grid Grid.Column="1" Grid.Row="1" MinWidth="696" MaxWidth="200">
+                    <Grid Grid.Column="1" Grid.Row="1" MinWidth="680" MaxWidth="200">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="2*"/>
                             <ColumnDefinition Width="1*"/>

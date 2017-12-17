@@ -95,9 +95,9 @@
                             <RowDefinition Height="1*"/>
                         </Grid.RowDefinitions>
                         <Image Source="{Binding ImagePath}" Grid.Row="1" Grid.RowSpan="7" Grid.Column="1"/>
-                        <TextBlock Text="{Binding Title}" Grid.Row="1" Grid.Column="3" FontSize="12" FontFamily="Blogger Sans" Foreground="#FF5E0808"/>
-                        <TextBlock Text="{Binding Author}" Grid.Row="3" Grid.Column="3" FontSize="10" FontFamily="Blogger Sans" Foreground="#FF5E0808"/>
-                        <TextBlock Text="{Binding Genre}" Grid.Row="5" Grid.Column="3" FontSize="10" FontFamily="Blogger Sans" Foreground="#FF5E0808"/>
+                        <TextBlock Text="{Binding Title}" Grid.Column="3" Grid.Row="1" Grid.ColumnSpan="3" FontSize="12" FontFamily="Blogger Sans" Foreground="#FF5E0808"/>
+                        <TextBlock Text="{Binding Author}" Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="3" FontSize="10" FontFamily="Blogger Sans" Foreground="#FF5E0808"/>
+                        <TextBlock Text="{Binding Genre}" Grid.Row="5" Grid.Column="3" Grid.ColumnSpan="3" FontSize="10" FontFamily="Blogger Sans" Foreground="#FF5E0808"/>
                         <TextBlock Text="{Binding Description}" TextWrapping="Wrap" Grid.Row="7" Grid.Column="3" Grid.ColumnSpan="3" FontStyle="Italic" FontSize="10" FontFamily="Blogger Sans" Foreground="#FF5E0808" Opacity="0.7"/>
                     </Grid>
                 </DataTemplate>

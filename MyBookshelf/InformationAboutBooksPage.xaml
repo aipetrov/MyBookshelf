@@ -14,6 +14,8 @@
             <ColumnDefinition Width="15*"/>
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="15*"/>
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="15*"/>
@@ -35,16 +37,22 @@
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
         <Rectangle Fill="#FFD38377" Grid.ColumnSpan="3" Grid.RowSpan="13" Height="Auto" />
-        <Rectangle Fill="#FFE8C6C8" Grid.RowSpan="13" Height="Auto"  Grid.Column="3" Grid.ColumnSpan="6"/>
-        <TextBlock x:Name="text_author" Grid.Column="4" Grid.Row="1" Text="Author:" Grid.ColumnSpan="3" FontFamily="Trajan Pro" FontSize="24" Foreground="#FF5E0808"/>
-        <TextBlock x:Name="text_booktitle" Grid.Column="4" Grid.Row="3" Text="Title:" Grid.ColumnSpan="3" FontFamily="Trajan Pro" FontSize="20" Foreground="#FF5E0808"/>
-        <TextBlock x:Name="text_genre" Grid.Column="4" Grid.Row="5" Text="Genre:" Grid.ColumnSpan="3" FontFamily="Trajan Pro" FontSize="20" Foreground="#FF5E0808"/>
-        <TextBlock x:Name="text_rating" Grid.Column="4" Grid.Row="7" Text="Rating:" Grid.ColumnSpan="3" FontFamily="Trajan Pro" FontSize="20" Foreground="#FF5E0808"/>
+        <Rectangle Fill="#FFE8C6C8" Grid.RowSpan="13" Height="Auto"  Grid.Column="3" Grid.ColumnSpan="7"/>
+        <TextBlock x:Name="text_author" Grid.Column="6" Grid.Row="1" Text="Author:" Grid.ColumnSpan="3" FontFamily="Trajan Pro" FontSize="24" Foreground="#FF5E0808"/>
+        <TextBlock x:Name="text_booktitle" Grid.Column="4" Grid.Row="3" Text="Title:" Grid.ColumnSpan="5" FontFamily="Trajan Pro" FontSize="20" Foreground="#FF5E0808"/>
+        <TextBlock x:Name="text_genre" Grid.Column="4" Grid.Row="5" Text="Genre:" Grid.ColumnSpan="5" FontFamily="Trajan Pro" FontSize="20" Foreground="#FF5E0808"/>
+        <TextBlock x:Name="text_rating" Grid.Column="4" Grid.Row="7" Text="Rating:" Grid.ColumnSpan="5" FontFamily="Trajan Pro" FontSize="20" Foreground="#FF5E0808"/>
         <Image x:Name="book_image" Grid.Column="1" Grid.Row="1" Grid.RowSpan="7"/>
-        <TextBlock x:Name="book_description" Grid.ColumnSpan="6" Grid.Column="1" Grid.Row="9" FontFamily="Trajan Pro" FontSize="20" Foreground="#FF5E0808"/>
-        <Button x:Name="book_review" Content="Review" Grid.Column="4" Grid.Row="11" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF7E0707" FontFamily="Tempus Sans ITC" FontSize="26" Click="book_review_Click"/>
-        <Button x:Name="button_add" Content="Mark as read" Grid.Column="6" Grid.Row="11" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF7E0707" FontFamily="Tempus Sans ITC" FontSize="26" Click="button_add_Click"/>
+        <TextBlock x:Name="book_description" Grid.ColumnSpan="8" Grid.Column="1" Grid.Row="9" FontFamily="Trajan Pro" FontSize="20" Foreground="#FF5E0808"/>
+        <Button x:Name="book_review" Content="Review" Grid.Column="5" Grid.ColumnSpan="2" Grid.Row="11" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF7E0707" FontFamily="Tempus Sans ITC" FontSize="26" Click="book_review_Click"/>
+        <Button x:Name="button_add" Content="Mark as read" Grid.Column="8" Grid.Row="11" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF7E0707" FontFamily="Tempus Sans ITC" FontSize="26"/>
         <Button x:Name="button_delete" Content="Delete from read" Grid.Column="1" Grid.Row="11" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF7E0707" FontFamily="Tempus Sans ITC" FontSize="26" Click="button_delete_Click"/>
-        <Button Click="Button_Click"></Button>
+        <Button x:Name="search_author"  Grid.Column="3" Grid.Row="1" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF7E0707" FontFamily="Tempus Sans ITC" FontSize="18" Grid.ColumnSpan="3" HorizontalAlignment="Left" Margin="14.333,0.333,0,0.333" Width="72">
+            <Button.Template>
+                <ControlTemplate>
+                    <Image Source="search.png" Height="30" Width="30"></Image>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
     </Grid>
 </Page>
