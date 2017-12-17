@@ -54,7 +54,7 @@
                             <RowDefinition Height="8*"/>
                             <RowDefinition Height="1*"/>
                         </Grid.RowDefinitions>
-                        <TextBlock Text="{Binding User}" Grid.Column="1" Grid.Row="1" FontSize="12" FontFamily="Blogger Sans" Foreground="#FF5E0808" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding User.Name}" Grid.Column="1" Grid.Row="1" FontSize="12" FontFamily="Blogger Sans" Foreground="#FF5E0808" FontWeight="Bold"/>
                         <TextBlock Text="{Binding DateTime}" Grid.Column="3" Grid.Row="1" FontSize="9" FontFamily="Blogger Sans" Foreground="#FF9C9191"/>
                         <TextBlock Text="Rating:" Grid.Column="5" Grid.Row="1" FontSize="10" FontFamily="Blogger Sans" Foreground="#FF5E0808" FontWeight="Bold"/>
                         <TextBlock Text="{Binding Rating}" Grid.Column="6" Grid.Row="1" FontSize="10" FontFamily="Blogger Sans" Foreground="#FF5E0808" FontWeight="Bold"/>
