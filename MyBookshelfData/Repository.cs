@@ -183,7 +183,7 @@ namespace MyBookshelfData
         {
             Context context = new Context();
             var booksOfUser = context.Books.Where(x => x.Readers.FirstOrDefault(z => z.Id == AuthorisedUser.Id)!=null);
-            context.Dispose();
+            
             var recommendedBooks = new List<Book>();
             foreach (var book in booksOfUser)
             {
@@ -193,6 +193,7 @@ namespace MyBookshelfData
                     recommendedBooks.Add(similarBook);
                 }
             }
+            context.Dispose();
 
             var distRecommendedBooks = recommendedBooks.Distinct().ToList();
 
