@@ -59,6 +59,7 @@ namespace MyBookshelf
             r.DeleteBookFromRead();
             button_add.Visibility = Visibility.Visible;
             button_delete.Visibility = Visibility.Hidden;
+            NavigationService.Navigate(new ProfilePage(repository));
         }
 
         private void button_add_Click(object sender, RoutedEventArgs e)
@@ -67,6 +68,7 @@ namespace MyBookshelf
             r.MarkBookAsRead();
             button_delete.Visibility = Visibility.Visible;
             button_add.Visibility = Visibility.Hidden;
+            NavigationService.Navigate(new ProfilePage(repository));
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

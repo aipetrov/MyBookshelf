@@ -225,7 +225,7 @@ namespace MyBookshelfData
         public List<Review> GetReviews(Book book)
         {
             Context context = new Context();
-            var reviews = context.Reviews.Where(x => x.Book.Id == book.Id).ToList();
+            var reviews = context.Reviews.Include("User").Where(x => x.Book.Id == book.Id).ToList();
             context.Dispose();
             return reviews;
         }
