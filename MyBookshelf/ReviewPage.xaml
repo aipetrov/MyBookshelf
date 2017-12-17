@@ -62,7 +62,7 @@
             </ListBox.ItemTemplate>
         </ListBox>
         <Button x:Name="send_review" Content="Send review" Grid.Column="5" Grid.Row="5" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF7E0707" FontFamily="Tempus Sans ITC" FontSize="30" Click="send_review_Click"/>
-        <TextBox x:Name="write_review" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="3" Grid.RowSpan="3" Opacity="0.6" Foreground="#FF5E0808" SelectionBrush="{x:Null}" BorderBrush="{x:Null}" FontFamily="Trajan Pro" FontSize="20"/>
+        <TextBox x:Name="write_review" TextWrapping="Wrap" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="3" Grid.RowSpan="3" Opacity="0.6" Foreground="#FF5E0808" SelectionBrush="{x:Null}" BorderBrush="{x:Null}" FontFamily="Trajan Pro" FontSize="20"/>
         <TextBlock x:Name="textblock_book" Text="Name of the book" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" FontFamily="Trajan Pro" Foreground="#FF5E0808" FontSize="22" />
         <ComboBox Text="Rating:" x:Name="rating_combobox" Grid.Column="5" Grid.Row="3">
        
