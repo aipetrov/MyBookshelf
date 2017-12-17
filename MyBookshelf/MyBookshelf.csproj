@@ -177,5 +177,47 @@
   <ItemGroup>
     <Resource Include="search.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Romeo_And_Julietta.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="AnimalFarm.jpg" />
+    <Resource Include="BeautifulDisaster.jpg" />
+    <Resource Include="BeforeTheDevilBreaksYou.jpg" />
+    <Resource Include="christmascarol.jpg" />
+    <Resource Include="DavidCopperfield.jpg" />
+    <Resource Include="DownandOutinParisandLondon.jpg" />
+    <Resource Include="GoneWithTheWind.jpg" />
+    <Resource Include="Hamlet.jpg" />
+    <Resource Include="HeavenAndHell.jpg" />
+    <Resource Include="hopeless.jpg" />
+    <Resource Include="icon.png" />
+    <Resource Include="KafkaontheShore.jpg" />
+    <Resource Include="Mean.jpg" />
+    <Resource Include="MeBeforeYou.jpg" />
+    <Resource Include="NorwegianWood.jpg" />
+    <Resource Include="Otello.jpg" />
+    <Resource Include="Portret_Doriana_Greya.jpg" />
+    <Resource Include="PrideandPrejudice.jpg" />
+    <Resource Include="RomancingTheInventor.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="SeaWolf.jpeg" />
+    <Resource Include="seeme.jpg" />
+    <Resource Include="sixThinkingHats.jpg" />
+    <Resource Include="theactorslife.jpg" />
+    <Resource Include="thehungergames.jpg" />
+    <Resource Include="TheLastSong.jpeg" />
+    <Resource Include="theluckyone.jpg" />
+    <Resource Include="thepsycopathtest.jpg" />
+    <Resource Include="The_Perks_Wallflower.jpg" />
+    <Resource Include="ToKillAMockingbird.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="1Q84.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="1984.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

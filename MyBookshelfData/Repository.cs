@@ -236,7 +236,7 @@ namespace MyBookshelfData
         public string GetAuthor(int bookID)
         {
             Context context = new Context();
-            var foundBook = context.Books.FirstOrDefault(x => x.Id == 1);
+            var foundBook = context.Books.FirstOrDefault(x => x.Id == bookID);
             context.Dispose();
             return foundBook.Author;
         }
