@@ -1,13 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.16
+VisualStudioVersion = 15.0.26730.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyBookshelf", "MyBookshelf\MyBookshelf.csproj", "{C2B77E7A-D1FC-43C7-84D7-CB682E5541FB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyBookshelfData", "MyBookshelfData\MyBookshelfData.csproj", "{3A3B45A0-82FB-4AF9-9413-05F75BA47A5C}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wikipedia.NET", "..\..\Wikipedia.Net-master\Wikipedia.Net-master\Wikipedia.NET\Wikipedia.NET.csproj", "{F171FB32-C071-4A38-BA05-61DD8B73723A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,12 +31,6 @@ Global
 		{3A3B45A0-82FB-4AF9-9413-05F75BA47A5C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3A3B45A0-82FB-4AF9-9413-05F75BA47A5C}.Release|x86.ActiveCfg = Release|Any CPU
 		{3A3B45A0-82FB-4AF9-9413-05F75BA47A5C}.Release|x86.Build.0 = Release|Any CPU
-		{F171FB32-C071-4A38-BA05-61DD8B73723A}.Debug|Any CPU.ActiveCfg = Debug|x86
-		{F171FB32-C071-4A38-BA05-61DD8B73723A}.Debug|x86.ActiveCfg = Debug|x86
-		{F171FB32-C071-4A38-BA05-61DD8B73723A}.Debug|x86.Build.0 = Debug|x86
-		{F171FB32-C071-4A38-BA05-61DD8B73723A}.Release|Any CPU.ActiveCfg = Release|x86
-		{F171FB32-C071-4A38-BA05-61DD8B73723A}.Release|x86.ActiveCfg = Release|x86
-		{F171FB32-C071-4A38-BA05-61DD8B73723A}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

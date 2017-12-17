@@ -4,9 +4,6 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WikipediaNET;
-using WikipediaNET.Enums;
-using WikipediaNET.Objects;
 
 namespace MyBookshelfData
 {
@@ -275,15 +272,14 @@ namespace MyBookshelfData
             context.Dispose();
             return foundBook.Description;
         }
-        
-        public void Browse(string authorName)
+
+        GoogleService googleService = new GoogleService();
+
+        public async void Browse(string authorName)
         {
-            Wikipedia wikipedia = new Wikipedia();
-            wikipedia.UseTLS = true;
-            wikipedia.Limit = 1;
-            wikipedia.What = What.Title;           
-            QueryResult results = wikipedia.Search(authorName);
-            Process.Start(results.Search[0].Url.ToString());
+            var results = await googleService.GetResults(authorName);
+            Process.Start(results[0].Url);
+
         }
     }
 }

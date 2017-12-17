@@ -1,0 +1,17 @@
+C:\Users\Андрей\Desktop\Programming\TeamProject\MyBookshelf\MyBookshelfData\bin\Debug\MyBookshelfData.dll.config
+C:\Users\Андрей\Desktop\Programming\TeamProject\MyBookshelf\MyBookshelfData\bin\Debug\MyBookshelfData.dll
+C:\Users\Андрей\Desktop\Programming\TeamProject\MyBookshelf\MyBookshelfData\bin\Debug\MyBookshelfData.pdb
+C:\Users\Андрей\Desktop\Programming\TeamProject\MyBookshelf\MyBookshelfData\bin\Debug\EntityFramework.dll
+C:\Users\Андрей\Desktop\Programming\TeamProject\MyBookshelf\MyBookshelfData\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Андрей\Desktop\Programming\TeamProject\MyBookshelf\MyBookshelfData\bin\Debug\EntityFramework.xml
+C:\Users\Андрей\Desktop\Programming\TeamProject\MyBookshelf\MyBookshelfData\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Андрей\Desktop\Programming\TeamProject\MyBookshelf\MyBookshelfData\obj\Debug\MyBookshelfData.csprojResolveAssemblyReference.cache
+C:\Users\Андрей\Desktop\Programming\TeamProject\MyBookshelf\MyBookshelfData\obj\Debug\MyBookshelfData.Migrations.InitialCreate.resources
+C:\Users\Андрей\Desktop\Programming\TeamProject\MyBookshelf\MyBookshelfData\obj\Debug\MyBookshelfData.Migrations.start.resources
+C:\Users\Андрей\Desktop\Programming\TeamProject\MyBookshelf\MyBookshelfData\obj\Debug\MyBookshelfData.Migrations.changeteopportunitytotakenullvalue.resources
+C:\Users\Андрей\Desktop\Programming\TeamProject\MyBookshelf\MyBookshelfData\obj\Debug\MyBookshelfData.csproj.GenerateResource.Cache
+C:\Users\Андрей\Desktop\Programming\TeamProject\MyBookshelf\MyBookshelfData\obj\Debug\MyBookshelfData.csproj.CoreCompileInputs.cache
+C:\Users\Андрей\Desktop\Programming\TeamProject\MyBookshelf\MyBookshelfData\obj\Debug\MyBookshelfData.dll
+C:\Users\Андрей\Desktop\Programming\TeamProject\MyBookshelf\MyBookshelfData\obj\Debug\MyBookshelfData.pdb
+C:\Users\Андрей\Desktop\Programming\TeamProject\MyBookshelf\MyBookshelfData\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Андрей\Desktop\Programming\TeamProject\MyBookshelf\MyBookshelfData\bin\Debug\Newtonsoft.Json.xml
