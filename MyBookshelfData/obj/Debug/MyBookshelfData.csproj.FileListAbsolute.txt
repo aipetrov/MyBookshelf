@@ -51,3 +51,4 @@ C:\Users\Андрей\Desktop\team project\MyBookshelfData\obj\Debug\MyBookshelf
 C:\Users\Андрей\Desktop\team project\MyBookshelfData\obj\Debug\MyBookshelfData.csproj.CoreCompileInputs.cache
 C:\Users\Андрей\Desktop\team project\MyBookshelfData\obj\Debug\MyBookshelfData.dll
 C:\Users\Андрей\Desktop\team project\MyBookshelfData\obj\Debug\MyBookshelfData.pdb
+C:\Users\Влада\Source\Repos\MyBookshelf2\MyBookshelfData\obj\Debug\MyBookshelfData.Migrations.NewTable.resources
