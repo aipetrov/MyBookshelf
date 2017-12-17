@@ -104,6 +104,5 @@
             </ListBox.ItemTemplate>
         </ListBox>
         <Button x:Name="all_books" Content="Show all books" Grid.Column="4" Grid.Row="1" Grid.RowSpan="3" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF7E0707" FontFamily="Tempus Sans ITC" FontSize="24" Grid.ColumnSpan="2" Click="all_books_Click"/>
-        <Button Click="Button_Click"></Button>
     </Grid>
 </Page>

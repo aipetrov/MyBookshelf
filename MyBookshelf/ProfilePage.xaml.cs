@@ -65,12 +65,6 @@ namespace MyBookshelf
             NavigationService.Navigate(new InformationAboutBooksPage(listbox_read.SelectedItem as Book, repository));
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            ShowRecommendBooks(repository.GetRecommendedBooks());
-            ShowReadBooks(repository.GetReadBooks());
-        }
-
         private void listbox_recommend_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             repository.ListBookUpdated += ShowReadBooks;
