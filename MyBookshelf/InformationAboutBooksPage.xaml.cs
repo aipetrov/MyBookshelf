@@ -23,18 +23,20 @@ namespace MyBookshelf
     {
         Repository repository;
         Book book;
+        int bookID;
 
         public InformationAboutBooksPage(Book _book, Repository _repository)
         {
             InitializeComponent();
             book = _book;
             repository = _repository;
-            text_author.Text = "Author: "+book.Author;
-            text_booktitle.Text = "Title: " + book.Title;
-            text_genre.Text = "Genre: " + book.Genre;
+            bookID = book.Id;
+            text_author.Text = "Author: " + repository.GetAuthor(bookID);
+            text_booktitle.Text = "Title: " + repository.GetTitle(book);
+            text_genre.Text = "Genre: " + repository.GetGenre(book);
             text_rating.Text = "Rating: " + repository.CalculateRating(book);
-            book_image.DataContext = book.ImagePath;
-            book_description.Text = book.Description;
+            book_image.DataContext = repository.GetImagePath(book);
+            book_description.Text = repository.GetDescription(book);
 
             if (repository.BookIsRead(book))
             {
@@ -56,12 +58,20 @@ namespace MyBookshelf
         private void button_delete_Click(object sender, RoutedEventArgs e)
         {
             repository.DeleteBookFromRead(book);
-            MessageBox.Show("Successfully");
+            button_add.Visibility = Visibility.Visible;
+            button_delete.Visibility = Visibility.Hidden;
         }
 
         private void button_add_Click(object sender, RoutedEventArgs e)
         {
             repository.MarkBookAsRead(book);
+            button_delete.Visibility = Visibility.Visible;
+            button_add.Visibility = Visibility.Hidden;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            repository.Browse(repository.GetAuthor(book.Id));
         }
     }
 }

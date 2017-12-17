@@ -1,14 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WikipediaNET;
+using WikipediaNET.Enums;
+using WikipediaNET.Objects;
 
 namespace MyBookshelfData
 {
     public class Repository
     {
         public User AuthorisedUser { get; set; }
+
+        public Action<Context> ContextUpdated;
+
+        public Action<List<Book>> ListBookUpdated;
 
         public bool SignedIn(string login, string password)
         {
@@ -23,8 +31,7 @@ namespace MyBookshelfData
             else
             {
                 return false;
-            }
-           
+            }           
         }
 
         public bool UserExists(string login)
@@ -55,7 +62,7 @@ namespace MyBookshelfData
         {
             Context context = new Context();
             var books = context.Books.ToList();
-            context.Dispose();       
+            context.Dispose();
             return books;            
         }
 
@@ -73,7 +80,9 @@ namespace MyBookshelfData
             var user = context.Users.FirstOrDefault(x => x.Id == AuthorisedUser.Id);
             context.Books.Include("Readers").FirstOrDefault(x => x.Id == book.Id).Readers.Add(user);
             context.SaveChanges();
-            context.Dispose();
+            ContextUpdated?.Invoke(context);
+            ListBookUpdated?.Invoke(GetReadBooks());
+            context.Dispose();            
         }
 
         public void DeleteBookFromRead(Book book)
@@ -82,42 +91,45 @@ namespace MyBookshelfData
             var user = context.Users.FirstOrDefault(x => x.Id == AuthorisedUser.Id);
             context.Books.Include("Readers").FirstOrDefault(x => x.Id == book.Id).Readers.Remove(user);
             context.SaveChanges();
-            context.Dispose();
+            ContextUpdated?.Invoke(context);
+            context.Dispose();            
         }
 
         public bool BookIsRead(Book book)
         {
             Context context = new Context();
-            var reader = context.Books.Where(x => x.Readers.Contains(AuthorisedUser));
-            context.Dispose();
-            if (reader != null)
+            var user = context.Users.FirstOrDefault(x => x.Id == AuthorisedUser.Id);
+            var readBook = context.Books.Include("Readers").FirstOrDefault(x => x.Readers.FirstOrDefault(y => y.Id==user.Id)!=null && x.Id==book.Id);            
+            if (readBook != null)
             {
+                context.Dispose();
                 return true;
             }
             else
             {
+                context.Dispose();
                 return false;
             }
-
-
         }
 
         public void AddNewReview(Book book, int rating, string comment)
         {
             Context context = new Context();
-            var reviews = context.Reviews.ToList();
-            reviews.Add(new Review { User = AuthorisedUser, Book = book, Comment = comment, Rating = rating, DateTime = DateTime.Now });
+            var user = context.Users.FirstOrDefault(x => x.Id == AuthorisedUser.Id);
+            var revBook = context.Books.FirstOrDefault(x => x.Id == book.Id);
+            context.Reviews.Add(new Review { User = user, Book = revBook, Comment = comment, Rating = rating, DateTime = DateTime.Now });
             context.SaveChanges();
             context.Dispose();
+            ContextUpdated?.Invoke(context);
         }
 
         public void DeleteReview(Review review)
         {
             Context context = new Context();
-            var reviews = context.Reviews.ToList();
-            reviews.Remove(review);
+            var reviews = context.Reviews.Remove(context.Reviews.FirstOrDefault(x => x.Id==review.Id));
             context.SaveChanges();
             context.Dispose();
+            ContextUpdated?.Invoke(context);
         }
 
         public void EditReview(Review review, int rating, string comment)
@@ -128,19 +140,19 @@ namespace MyBookshelfData
             foundReview.Comment = comment;
             context.SaveChanges();
             context.Dispose();
+            ContextUpdated?.Invoke(context);
         }
 
         public bool ReviewIsYours(Review review)
         {
             Context context = new Context();
-            var reviews = context.Reviews.Where(x => x.User == AuthorisedUser);
-            context.Dispose();
-            if (reviews.FirstOrDefault(x => x.Id == review.Id) != null)
-            {
+            Review yourReview = context.Reviews.FirstOrDefault(x => x.Id == review.Id && x.User.Id==AuthorisedUser.Id);
+            if (yourReview != null)
+            {                
                 return true;
             }
             else
-            {
+            {           
                 return false;
             }
         }
@@ -177,6 +189,7 @@ namespace MyBookshelfData
             AuthorisedUser = user;
             context.SaveChanges();
             context.Dispose();
+            ContextUpdated?.Invoke(context);
         }
 
         public List<Book> GetRecommendedBooks()
@@ -194,9 +207,8 @@ namespace MyBookshelfData
                 }
             }
             context.Dispose();
-
             var distRecommendedBooks = recommendedBooks.Distinct().ToList();
-
+            
             return distRecommendedBooks;
         }
 
@@ -222,6 +234,56 @@ namespace MyBookshelfData
             var foundReview = context.Reviews.FirstOrDefault(x => x.Id == review.Id);
             context.Dispose();
             return foundReview.Rating;
+        }
+
+        public string GetAuthor(int bookID)
+        {
+            Context context = new Context();
+            var foundBook = context.Books.FirstOrDefault(x => x.Id == 1);
+            context.Dispose();
+            return foundBook.Author;
+        }
+
+        public string GetTitle(Book book)
+        {
+            Context context = new Context();
+            var foundBook = context.Books.FirstOrDefault(x => x.Id == book.Id);
+            context.Dispose();
+            return foundBook.Title;
+        }
+
+        public string GetGenre(Book book)
+        {
+            Context context = new Context();
+            var foundBook = context.Books.FirstOrDefault(x => x.Id == book.Id);
+            context.Dispose();
+            return foundBook.Genre;
+        }
+
+        public string GetImagePath(Book book)
+        {
+            Context context = new Context();
+            var foundBook = context.Books.FirstOrDefault(x => x.Id == book.Id);
+            context.Dispose();
+            return foundBook.ImagePath;
+        }
+
+        public string GetDescription(Book book)
+        {
+            Context context = new Context();
+            var foundBook = context.Books.FirstOrDefault(x => x.Id == book.Id);
+            context.Dispose();
+            return foundBook.Description;
+        }
+        
+        public void Browse(string authorName)
+        {
+            Wikipedia wikipedia = new Wikipedia();
+            wikipedia.UseTLS = true;
+            wikipedia.Limit = 1;
+            wikipedia.What = What.Title;           
+            QueryResult results = wikipedia.Search(authorName);
+            Process.Start(results.Search[0].Url.ToString());
         }
     }
 }

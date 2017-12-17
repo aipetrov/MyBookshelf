@@ -29,26 +29,36 @@ namespace MyBookshelf
             InitializeComponent();
             book = _book;
             repository = _repository;
-            list_reviews.ItemsSource = repository.GetReviews(book);
             textblock_book.Text = book.Title;
+            ShowReviews(new Context());
+        }
+
+        public void ShowReviews(Context context)
+        {
+            list_reviews.ItemsSource = repository.GetReviews(book);
         }
 
         private void edit_review_Click(object sender, RoutedEventArgs e)
         {
+            repository.ContextUpdated += ShowReviews;
             NavigationService.Navigate(new ReviewEditingPage(list_reviews.SelectedItem as Review, repository));
         }
 
         private void list_reviews_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (repository.ReviewIsYours(list_reviews.SelectedItem as Review))
+            if (list_reviews.SelectedItem!=null)
             {
-                edit_review.IsEnabled = true;
-                delete_review.IsEnabled = true;
+                if (repository.ReviewIsYours(list_reviews.SelectedItem as Review))
+                {
+                    edit_review.IsEnabled = true;
+                    delete_review.IsEnabled = true;
+                }
             }
         }
 
         private void delete_review_Click(object sender, RoutedEventArgs e)
         {
+            repository.ContextUpdated += ShowReviews;
             repository.DeleteReview(list_reviews.SelectedItem as Review);
         }
 
@@ -56,24 +66,23 @@ namespace MyBookshelf
         {
             try
             {
-                repository.AddNewReview(book, int.Parse(rating_combobox.Text), write_review.Text);
-                MessageBox.Show("Your review is successfuly sent.", "Success", MessageBoxButton.OK, MessageBoxImage.Asterisk);
+                if (!string.IsNullOrWhiteSpace(write_review.Text))
+                {
+                    repository.ContextUpdated += ShowReviews;
+                    repository.AddNewReview(book, int.Parse(rating_combobox.Text), write_review.Text);
+                    MessageBox.Show("Your review is successfuly sent.", "Success", MessageBoxButton.OK, MessageBoxImage.Asterisk);
+                    write_review.Clear();
+                    rating_combobox.Text=null;
+                }
+                else
+                {
+                    MessageBox.Show("Write a comment.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+                
             }
             catch
             {
                 MessageBox.Show("Fill in the gaps correctly.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
-        }
-
-        private void write_review_DataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
-        {
-            if (!string.IsNullOrWhiteSpace(write_review.Text))
-            {
-                send_review.IsEnabled = true;
-            }
-            else
-            {
-                send_review.IsEnabled = false;
             }
         }
     }

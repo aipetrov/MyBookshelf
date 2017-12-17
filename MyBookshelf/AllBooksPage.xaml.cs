@@ -30,5 +30,9 @@ namespace MyBookshelf
             all_books.ItemsSource = repository.GetBooks();
         }
 
+        private void all_books_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            NavigationService.Navigate(new InformationAboutBooksPage(all_books.SelectedItem as Book, repository));
+        }
     }
 }

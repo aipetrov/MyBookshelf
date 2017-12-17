@@ -20,7 +20,7 @@
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
         <Rectangle Fill="#FFE8C6C8" Grid.RowSpan="3" Height="Auto"  Grid.ColumnSpan="3"/>
-        <ListBox x:Name="all_books" Grid.Column="1" Grid.Row="1" Background="#FFEDE7F2" BorderBrush="{x:Null}">
+        <ListBox x:Name="all_books" Grid.Column="1" Grid.Row="1" Background="#FFEDE7F2" BorderBrush="{x:Null}" SelectionChanged="all_books_SelectionChanged">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid Grid.Column="1" Grid.Row="1" MinWidth="680" MaxWidth="200">
