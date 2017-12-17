@@ -36,7 +36,7 @@ namespace MyBookshelf
             text_genre.Text = "Genre: " + repository.GetGenre(book);
             text_rating.Text = "Rating: " + repository.CalculateRating(book);
             book_image.DataContext = repository.GetImagePath(book);
-            book_description.Text = repository.GetDescription(book);
+            book_description.Text=repository.GetDescription(book);
 
             if (repository.BookIsRead(book))
             {

@@ -37,7 +37,7 @@
             <ComboBoxItem Content="4"></ComboBoxItem>
             <ComboBoxItem Content="5"></ComboBoxItem>
         </ComboBox>
-        <TextBox x:Name="new_comment" Grid.ColumnSpan="2" Grid.Column="3"  Grid.Row="3" Opacity="0.6" Foreground="#FF5E0808" BorderBrush="{x:Null}" FontFamily="Trajan Pro" FontSize="24"/>
+        <TextBox x:Name="new_comment" Grid.ColumnSpan="2" Grid.Column="3" TextWrapping="Wrap" Grid.Row="3" Opacity="0.6" Foreground="#FF5E0808" BorderBrush="{x:Null}" FontFamily="Trajan Pro" FontSize="24"/>
         <Button x:Name="save_review" Content="Save new review" Click="save_review_Click" Grid.Column="4" Grid.Row="5" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF7E0707" FontFamily="Tempus Sans ITC" FontSize="30"/>
 
     </Grid>
